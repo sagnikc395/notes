@@ -1,4 +1,6 @@
 [
   "svelte-syntax-highlighter",
-  "obsidian-annotator"
+  "obsidian-annotator",
+  "templater-obsidian",
+  "longform"
 ]
