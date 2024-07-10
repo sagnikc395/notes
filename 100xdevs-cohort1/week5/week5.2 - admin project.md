@@ -1,0 +1,21 @@
+---
+title: state management in react
+tags:
+  - react
+  - state-management
+  - recoil
+---
+- as of now , we can do signup, login and basic authentication using token based sessions.
+- this token needs to be sent in future requests and get the results.
+- basic flow of auth, signin,signout and other 
+- doing state management using primtiives is a lot of work and sharing the state becomes a hassle so we need state management libraries for that 
+- using recoil for the same.
+-  state management library by react.
+- high level concepts:
+	- install using npm install recoil
+	- add a top level provider in the react root for recoil
+	- doing this in the root to make the provider take control of it.
+- Atom -> piece of state in Recoil
+- atoms can be read and written from any components.
+- Components that read the value of an atom are implicitly subscribed to that atom, so any atom updates will result in pre-render of all the components subscribed to that atom.
+- 
