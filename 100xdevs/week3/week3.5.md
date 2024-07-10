@@ -1,0 +1,33 @@
+---
+title: Databases - Mongodb
+tags:
+  - databases
+  - mongodb
+---
+### why do we need databases ?
+- we could store data directly in memory.
+- however if we stop the process and start again and it can go away .
+- need to store in a very specific place.
+- storing in files is not good as databases are optimized for storing data -> files are not optimized and hard to replicate across different places.
+- multiple types of databases , and their goal is to store data, write data, read data via API.
+- M in Mern Stack -> mongodb ; can use a cloud version or can setup locally on our own system.
+- MongoDB cluster -> own database on mongodb cloud.
+- setup which users and ip address which can access it.
+- In SQL  it is called tables, in MongoDB it is called as collections.
+- every table need to have 1 collection atleast.
+- the collections will have a bunch of data present and will be a objects only and creates data in a schemaless fashion.
+- in lets our store different shapes of data in the data storage .
+- store data not in our local file system but in some cloud.
+- mongoose is a library that allows us to connect to a mongodb database -> driver for it ; abstract the logic for doing crud operations on it; very data centric.
+- http servers in the logic , is where we run the algorithm.
+- http server is in our auth layer
+- for the code -> check 04-course-app-hard.js 
+- mongoose.schema:
+	- allows us to define the schema for the data to be sent to the db.
+	- userSchema , adminSchema etc.
+	- need to keep it strictly defined and the schema of what it looks like and then later grow it.
+- to create a foreign key in mongoose -> use a ref kv in the value and assign to a key type.
+- to relate data between different objects we need to keep a reference instead of creating a copy as the data wouldnt keep up and wont be in sync.
+- pass the connection url string to mongoose.string function.
+- .save() is what will write to the mongodb cloud the object.
+- to do the operations since nodejs is single threaded, we use await and async before writing the data back into the program and cleaner to use this than use promise based.
