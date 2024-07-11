@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "d64e8c46503fbbf4",
+        "id": "eff16b3baafd7172",
         "type": "tabs",
         "children": [
           {
-            "id": "84cd29a096d95028",
+            "id": "5c483acb942ed3b2",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "side-projects/monkey/ch1.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "side-projects/monkey/ch1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "side-projects/monkey/ch1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "side-projects/monkey/ch1.md"
+              }
             }
           }
         ]
@@ -148,8 +156,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "84cd29a096d95028",
+  "active": "fca42503e2f333bb",
   "lastOpenFiles": [
+    "side-projects/monkey/ch0.md",
+    "side-projects/monkey/README.md",
+    "side-projects/monkey/ch1.md",
+    "side-projects/rayt",
+    "side-projects",
+    "side-projects/monkey",
     "le-arts/Arts and Culture/Introduction.md",
     "templates/chapter.md",
     "le-arts/Arts and Culture/Index.md",
@@ -171,7 +185,6 @@
     "to-read/cpumemory.pdf",
     "Notes.md",
     "le-arts",
-    "ideas-thoughts",
     "Untitled.canvas",
     "learn-svelte/Untitled.md"
   ]

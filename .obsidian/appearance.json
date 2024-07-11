@@ -1,7 +1,7 @@
 {
   "cssTheme": "Sanctum",
-  "interfaceFontFamily": "",
+  "interfaceFontFamily": "Inter",
   "textFontFamily": "Monaspace Neon",
-  "baseFontSize": 17,
+  "baseFontSize": 15,
   "monospaceFontFamily": "Monaspace Neon"
 }

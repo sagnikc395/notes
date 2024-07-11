@@ -6,6 +6,18 @@
   "sessionStorage": "data",
   "sessions": [
     {
+      "start": "2024-07-11T18:50:25.388Z",
+      "total": 0,
+      "drafts": {
+        "le-arts/Arts and Culture/Index.md": {
+          "total": 0,
+          "scenes": {
+            "Introduction": 0
+          }
+        }
+      }
+    },
+    {
       "start": "2024-07-10T16:27:08.029Z",
       "total": 4,
       "drafts": {
