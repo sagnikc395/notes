@@ -37,4 +37,9 @@ date: 12/7/24
 
 
 ### Lexer:
-- 
+- It will take source code as input and will output the tokens that represents the source code. It will go through its input and output the tokens that represents the source code.
+- It will go through its input and output the next token it recognizes. It doesn't need to buffer or save tokens, since there will only be one method called NextToken().
+- Here, we will initialize the lexer with our source code and then repeatedly call NextToken() on it to go through the source code, token by token, character by character.
+- We will also make life simpler here by using string as the type for our source code.
+- 2 pointers for these two "pointers" pointing into our input string is in fact that we will need to be able to "peek" further into the input and look after the current character to see what comes up next.
+- readPosition will always point to "next" character in the input, position will point to the character in the input that corresponds the the ch byte.

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "eff16b3baafd7172",
+        "id": "948c5cd433e00e80",
         "type": "tabs",
         "children": [
           {
-            "id": "5c483acb942ed3b2",
+            "id": "ec7e68a30e30d7bd",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -156,11 +156,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fca42503e2f333bb",
+  "active": "ec7e68a30e30d7bd",
   "lastOpenFiles": [
+    "learn-web-dev/sveltic.md",
+    "side-projects/monkey/ch1.md",
     "side-projects/monkey/ch0.md",
     "side-projects/monkey/README.md",
-    "side-projects/monkey/ch1.md",
     "side-projects/rayt",
     "side-projects",
     "side-projects/monkey",
