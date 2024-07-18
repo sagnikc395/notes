@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "948c5cd433e00e80",
+        "id": "572d94d1b3f04889",
         "type": "tabs",
         "children": [
           {
-            "id": "ec7e68a30e30d7bd",
+            "id": "bd321e2358f5089d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "side-projects/monkey/ch1.md",
+                "file": "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 361.5,
-    "collapsed": true
+    "width": 361.5
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "side-projects/monkey/ch1.md",
+                "file": "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "side-projects/monkey/ch1.md",
+                "file": "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "side-projects/monkey/ch1.md"
+                "file": "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md"
               }
             }
           }
@@ -156,10 +155,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "ec7e68a30e30d7bd",
+  "active": "fca42503e2f333bb",
   "lastOpenFiles": [
-    "learn-web-dev/sveltic.md",
+    "ideas-thoughts/Untitled",
+    "ideas-thoughts/self-sabotage-16_7_24/Untitled",
+    "ideas-thoughts/self-sabotage-16_7_24",
+    "ideas-thoughts/self-sabotage-16_7_24/Screenshot 2024-07-16 at 11.58.37 AM.png",
+    "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
     "side-projects/monkey/ch1.md",
+    "learn-web-dev/sveltic.md",
     "side-projects/monkey/ch0.md",
     "side-projects/monkey/README.md",
     "side-projects/rayt",
@@ -183,9 +187,7 @@
     "100xdevs/README.md",
     "100xdevs/Screenshot 2024-07-03 at 11.56.55 AM.png",
     "100xdevs/Screenshot 2024-06-03 at 2.28.14 PM.png",
-    "to-read/cpumemory.pdf",
     "Notes.md",
-    "le-arts",
     "Untitled.canvas",
     "learn-svelte/Untitled.md"
   ]
