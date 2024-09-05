@@ -147,8 +147,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "6533746b5c6fd512",
+  "active": "fca42503e2f333bb",
   "lastOpenFiles": [
+    "snippets/README.md",
+    "snippets",
     "learn-web-dev/sveltic.md",
     "learn-web-dev/Basics of Svelte.md",
     "web-dev-stuff/TailwindCSS Basics.md",
@@ -173,7 +175,6 @@
     "templates/chapter.md",
     "le-arts/Arts and Culture/Index.md",
     "templates",
-    "le-arts/Arts and Culture",
     "Projects/paytm  architecture v1.md",
     "PL/cis352-notes/lec1.md",
     "PL/cis352-notes/lec0.md",
