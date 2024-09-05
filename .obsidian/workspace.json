@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "572d94d1b3f04889",
+        "id": "c073c3033bd5494c",
         "type": "tabs",
         "children": [
           {
-            "id": "bd321e2358f5089d",
+            "id": "6533746b5c6fd512",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -155,15 +147,23 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fca42503e2f333bb",
+  "active": "6533746b5c6fd512",
   "lastOpenFiles": [
+    "learn-web-dev/sveltic.md",
+    "learn-web-dev/Basics of Svelte.md",
+    "web-dev-stuff/TailwindCSS Basics.md",
+    "web-dev-stuff/learning Effect.ts.md",
+    "Untitled.md",
+    "100xdevs/week3/week3.2.md",
+    "web-dev-stuff",
+    "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
+    "book-reviews/tractatus.md",
+    "book-reviews",
     "ideas-thoughts/Untitled",
     "ideas-thoughts/self-sabotage-16_7_24/Untitled",
     "ideas-thoughts/self-sabotage-16_7_24",
     "ideas-thoughts/self-sabotage-16_7_24/Screenshot 2024-07-16 at 11.58.37 AM.png",
-    "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
     "side-projects/monkey/ch1.md",
-    "learn-web-dev/sveltic.md",
     "side-projects/monkey/ch0.md",
     "side-projects/monkey/README.md",
     "side-projects/rayt",
@@ -179,11 +179,6 @@
     "PL/cis352-notes/lec0.md",
     "PL/Foundations of Programming Languages.md",
     "PL/cis352-notes/lec2.md",
-    "learn-web-dev/TailwindCSS Basics.md",
-    "PL/cis352-notes",
-    "boot.dev/learn-pub-sub-arch",
-    "boot.dev",
-    "learn-web-dev/Basics of Svelte.md",
     "100xdevs/README.md",
     "100xdevs/Screenshot 2024-07-03 at 11.56.55 AM.png",
     "100xdevs/Screenshot 2024-06-03 at 2.28.14 PM.png",
