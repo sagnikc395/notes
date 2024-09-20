@@ -11,8 +11,12 @@
             "id": "6308724451b83056",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "PL/definitions and meanings.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "PL/definitions and meanings.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "PL/definitions and meanings.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "PL/definitions and meanings.md"
+              }
             }
           }
         ]
@@ -150,6 +158,8 @@
   },
   "active": "6308724451b83056",
   "lastOpenFiles": [
+    "PL/Screenshot 2024-09-20 at 6.36.39 PM.png",
+    "PL/definitions and meanings.md",
     "db-internals/README.md",
     "db-internals",
     "book-reviews/tractatus.md",
@@ -185,8 +195,6 @@
     "templates/chapter.md",
     "le-arts/Arts and Culture/Index.md",
     "Projects/paytm  architecture v1.md",
-    "PL/cis352-notes/lec1.md",
-    "PL/cis352-notes/lec0.md",
     "100xdevs/Screenshot 2024-07-03 at 11.56.55 AM.png",
     "100xdevs/Screenshot 2024-06-03 at 2.28.14 PM.png",
     "Untitled.canvas"
