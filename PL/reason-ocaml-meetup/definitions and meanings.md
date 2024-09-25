@@ -74,4 +74,14 @@ function applyMaybe<A, B>(f: Maybe<(a: A) => B>, m: Maybe<A>): Maybe<B> {
   return { just: f.just(m.just) };
 }
 ```
-cd 
+
+- <\*> function then takes each of the functions in the list and applies them to all of the values in the other list.
+```ts
+function applyArray<A,B>(fa: ((a: A) => B)[],arr:A[]): B[] {
+	//applying each function in the array 
+	// to each element in the other array 
+	return fa.flatMap(f => arr.map(f));
+}
+```
+- Applicative can take any function that expects any number of unwrapped values. Then when we pass it all the wrapped values and we get back a wrapped value.
+- 

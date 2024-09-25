@@ -30,7 +30,8 @@ tags:
 	- each edge type -> what types of node it can connect to -> (traditional way) -> need to improve on the architecture.
 	-  
 
-
+### Architecture:
+- 
 
 
 ### References:

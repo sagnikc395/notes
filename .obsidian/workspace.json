@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "e7f26f503adfea66",
+        "id": "a1bbd5f5c899fd25",
         "type": "tabs",
         "children": [
           {
-            "id": "6308724451b83056",
+            "id": "b6a683bbbaa330a1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PL/definitions and meanings.md",
+                "file": "Projects/knowledge-graph/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PL/definitions and meanings.md",
+                "file": "Projects/knowledge-graph/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PL/definitions and meanings.md",
+                "file": "Projects/knowledge-graph/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PL/definitions and meanings.md"
+                "file": "Projects/knowledge-graph/README.md"
               }
             }
           }
@@ -156,10 +156,21 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "6308724451b83056",
+  "active": "b6a683bbbaa330a1",
   "lastOpenFiles": [
-    "PL/Screenshot 2024-09-20 at 6.36.39 PM.png",
-    "PL/definitions and meanings.md",
+    "PL/functional-programming-cs3110/lec-2.md",
+    "PL/functional-programming-cs3110/lec-1.md",
+    "PL/reason-ocaml-meetup/Screenshot 2024-09-20 at 6.36.39 PM.png",
+    "PL/Semantic Type Soundness and Language Interoperability.md",
+    "PL/Foundations of Programming Languages.md",
+    "PL/reason-ocaml-meetup/parser combinators - Reason OCaml Meetup.md",
+    "PL/reason-ocaml-meetup",
+    "PL/functional-programming-cs3110",
+    "PL/cis352-notes/lec0.md",
+    "PL/cis352-notes/lec1.md",
+    "PL/cis352-notes/lec2.md",
+    "PL/compilers-ai-course/lec-1.md",
+    "PL/reason-ocaml-meetup/definitions and meanings.md",
     "db-internals/README.md",
     "db-internals",
     "book-reviews/tractatus.md",
@@ -184,17 +195,7 @@
     "snippets",
     "learn-web-dev/sveltic.md",
     "learn-web-dev/Basics of Svelte.md",
-    "web-dev-stuff/TailwindCSS Basics.md",
-    "web-dev-stuff/learning Effect.ts.md",
-    "Untitled.md",
-    "100xdevs/week3/week3.2.md",
     "web-dev-stuff",
-    "book-reviews",
-    "ideas-thoughts/Untitled",
-    "le-arts/Arts and Culture/Introduction.md",
-    "templates/chapter.md",
-    "le-arts/Arts and Culture/Index.md",
-    "Projects/paytm  architecture v1.md",
     "100xdevs/Screenshot 2024-07-03 at 11.56.55 AM.png",
     "100xdevs/Screenshot 2024-06-03 at 2.28.14 PM.png",
     "Untitled.canvas"
