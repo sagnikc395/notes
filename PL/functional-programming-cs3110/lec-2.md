@@ -263,3 +263,9 @@ let x = 42 in
 - OCaml automatically infers the type of every expression, with no need for the programmer to write it manually.
 - Nonetheless, it can sometimes be useful to manually specify the desired type of an expression. A type annotation does that.
 - Type annotations are not type casts, such as might be found in C/Java. They do not indicate a conversion from one type to antoher. Rather they indicate a check that the expression really does have the given type.
+
+
+### Functions:
+- Methods and functions are not the same. Method is a component of an object, and it implicitly has a receiver that is usually accessed with a keyword like this or self. OCaml functions are not methods: they are not components of objects, and they do not have a receiver.
+- Eeverything in OCaml is a function, not a method.
+- 
