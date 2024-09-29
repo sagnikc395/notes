@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "a1bbd5f5c899fd25",
+        "id": "470315ef3c640281",
         "type": "tabs",
         "children": [
           {
-            "id": "b6a683bbbaa330a1",
+            "id": "fd1526cbf5690188",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PL/functional-programming-cs3110/lec-2.md",
+                "file": "100xdevs/week4/week4.2 - react, effects and custom hooks.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 361.5,
-    "collapsed": true
+    "width": 361.5
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PL/functional-programming-cs3110/lec-2.md",
+                "file": "100xdevs/week4/week4.2 - react, effects and custom hooks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PL/functional-programming-cs3110/lec-2.md",
+                "file": "100xdevs/week4/week4.2 - react, effects and custom hooks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PL/functional-programming-cs3110/lec-2.md"
+                "file": "100xdevs/week4/week4.2 - react, effects and custom hooks.md"
               }
             }
           }
@@ -156,13 +155,26 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b6a683bbbaa330a1",
+  "active": "fd1526cbf5690188",
   "lastOpenFiles": [
+    "100xdevs/week4/the discovery of gravity, painting, two color.jpg",
+    "ddia/dynamodb.md",
+    "le-arts/Arts and Culture/Introduction.md",
+    "Personal/what am i thinking today ?.md",
+    "Personal",
+    "README.md",
+    "PL/functional-programming-cs3110/lec-2.md",
+    "PL/real-world-ocaml/part1/language-concepts.md",
+    "PL/real-world-ocaml/part1/Untitled.md",
+    "PL/real-world-ocaml/part1",
+    "PL/real-world-ocaml",
+    "design-patterns/creational/abstract-factory.md",
+    "design-patterns/creational",
+    "design-patterns",
     "PL/functional-programming-cs3110/lec-3.md",
     "PL/functional-programming-cs3110/lec-8.md",
     "PL/functional-programming-cs3110/lec-7.md",
     "PL/functional-programming-cs3110/lec-6.md",
-    "PL/functional-programming-cs3110/lec-2.md",
     "PL/functional-programming-cs3110/lec-5.md",
     "PL/functional-programming-cs3110/lec-4.md",
     "Projects/knowledge-graph/README.md",
@@ -180,22 +192,9 @@
     "PL/reason-ocaml-meetup/definitions and meanings.md",
     "db-internals/README.md",
     "db-internals",
-    "book-reviews/tractatus.md",
     "ideas-thoughts/self-sabotage-16_7_24/Screenshot 2024-07-16 at 11.58.37 AM.png",
-    "ideas-thoughts/self-sabotage-16_7_24/a tale of 2 countries.md",
-    "ddia/README.md",
-    "Projects/vanara/ch1.md",
     "ddia",
-    "Projects/vanara/ch0.md",
-    "Projects/vanara/README.md",
-    "Projects/rex/basics.md",
     "Projects/rex",
-    "Projects/vanara",
-    "100xdevs/week5/week5.1 - react foundations.md",
-    "Projects/knowledge-graph",
-    "CMUDBF2024",
-    "snippets",
-    "web-dev-stuff",
     "100xdevs/Screenshot 2024-07-03 at 11.56.55 AM.png",
     "100xdevs/Screenshot 2024-06-03 at 2.28.14 PM.png",
     "Untitled.canvas"
