@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "470315ef3c640281",
+        "id": "7414ccf6f73022c8",
         "type": "tabs",
         "children": [
           {
-            "id": "fd1526cbf5690188",
+            "id": "d63d79cb13937f03",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "100xdevs/week4/week4.2 - react, effects and custom hooks.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "100xdevs/week4/week4.2 - react, effects and custom hooks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "100xdevs/week4/week4.2 - react, effects and custom hooks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "100xdevs/week4/week4.2 - react, effects and custom hooks.md"
+                "file": "100xdevs/week3/week3.1.md"
               }
             }
           }
@@ -155,8 +149,25 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fd1526cbf5690188",
+  "active": "fca42503e2f333bb",
   "lastOpenFiles": [
+    "100xdevs/week3/week3.0.x.md",
+    "100xdevs/week3/week3.1.md",
+    "100xdevs/week3/index.md",
+    "100xdevs/week3/week3.1.md",
+    "100xdevs/week3/week3.5.md",
+    "100xdevs/week3/week3.4.md",
+    "100xdevs/week3/week3.2.md",
+    "100xdevs/week2/week2.4.md",
+    "100xdevs/week2/week 2.3.md",
+    "100xdevs/week2/week2.2.md",
+    "100xdevs/week2/week2.1.md",
+    "100xdevs/week1/week1.4.md",
+    "100xdevs/week1/week1.3.md",
+    "100xdevs/week1/Screenshot 2024-04-27 at 10.45.21 PM.png",
+    "100xdevs/week1/week1.2.md",
+    "100xdevs/week1/week1.1.md",
+    "100xdevs/week4/week4.2 - react, effects and custom hooks.md",
     "100xdevs/week4/the discovery of gravity, painting, two color.jpg",
     "ddia/dynamodb.md",
     "le-arts/Arts and Culture/Introduction.md",
@@ -173,24 +184,9 @@
     "design-patterns",
     "PL/functional-programming-cs3110/lec-3.md",
     "PL/functional-programming-cs3110/lec-8.md",
-    "PL/functional-programming-cs3110/lec-7.md",
-    "PL/functional-programming-cs3110/lec-6.md",
-    "PL/functional-programming-cs3110/lec-5.md",
-    "PL/functional-programming-cs3110/lec-4.md",
-    "Projects/knowledge-graph/README.md",
-    "PL/functional-programming-cs3110/lec-1.md",
     "PL/reason-ocaml-meetup/Screenshot 2024-09-20 at 6.36.39 PM.png",
-    "PL/Semantic Type Soundness and Language Interoperability.md",
-    "PL/Foundations of Programming Languages.md",
-    "PL/reason-ocaml-meetup/parser combinators - Reason OCaml Meetup.md",
     "PL/reason-ocaml-meetup",
     "PL/functional-programming-cs3110",
-    "PL/cis352-notes/lec0.md",
-    "PL/cis352-notes/lec1.md",
-    "PL/cis352-notes/lec2.md",
-    "PL/compilers-ai-course/lec-1.md",
-    "PL/reason-ocaml-meetup/definitions and meanings.md",
-    "db-internals/README.md",
     "db-internals",
     "ideas-thoughts/self-sabotage-16_7_24/Screenshot 2024-07-16 at 11.58.37 AM.png",
     "ddia",
