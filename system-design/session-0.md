@@ -1,0 +1,78 @@
+- System Design is Easy ->
+	- cause its opinionated.
+	- everything bolis down to it depends 
+	- iterative process, discussions
+
+- picking one system each week and dissecting it and learning why it was designed that way.
+	- learn about tradeoffs and advantages.
+
+- "meta"-class system design today:
+	- desgin a system thinking about only one user and then scaling for 1,000,000 users simultaneously.
+
+- 4/10/24 reading ->  https://bytebytego.com/courses/system-design-interview/scale-from-zero-to-millions-of-users
+
+### Scaling from 0 to millions of users:
+- **Single Server Setup** :
+	- Consider everything is running on a single server.
+	![[Screenshot 2024-10-04 at 6.14.55 PM.png]]
+	- To understand this, it is helpful to investigate the request flow and traffic source. 
+	- ![[Screenshot 2024-10-04 at 6.15.41 PM.png]]
+		- User will access websites through domain names, like api.mysite.com. Usually DNS (paid service).
+		- Get an IP from the DNS.
+		- Once the IP is obtained, HTTP requests are sent directly to our web server.
+		- Web Server then retunrs the HTML pages or JSON response for rendering.
+	- Traffic Source:
+		- comes from web app and mobile app.
+		- web app -> uses a combination of server side langs to handle business logic,stroage and client side languages for presentations.
+		- mobile app -> HTTP protocol is the comm protocol between the mobile app and the web server. JSON is commonly used to transfer data due to its simplicity.
+- **Database**:
+	- One server is not enough, and we need multiple servers: one for web/mobile traffic, other for database.
+	- Seperating web/mobile traffic and database(data pair) servers allows them to be scaled independently.
+	- ![[Screenshot 2024-10-04 at 6.21.15 PM.png]]
+	- **Which database to use ?**
+		- Relational db or a non-relational DB.
+		- Relational DB are also called as RDBMS/ SQL Database.
+			- Most popular one are MySQL,Postgres,Oracle etc.
+			- RDBMS represent and store data in tables and rows.
+			- Cna perform join operations using SQL across different database tables.
+		- Non-relational dbs are called as NoSQL:
+			- CounchDB, Neo4j,Cassandra, HBase etc.
+			- These are grouped into 4 categories -> 
+				- kv-stores
+				- graph stores
+				- column stores 
+				- document stores
+			- Join operations generally not supported.
+		- For most devs,RDBMS are best options because they have been for 40 years or more.
+		- Non relational good option when:
+			- Our application requires super-low latency.
+			- our data are unstructured, or we do not have any relational data. -> unstrcutured data like Video.
+			- we only need to serialize and deserialize data(JSON,XML etc.)
+			- store a massive amount of data.
+- **Vertical Scaling vs Horizontal Scaling**:
+	- Vertical Scaling -> scale up ->  means the prorcess of adding more power to our servers.
+	- Horizontal scaling -> scale out -> scale by adding more servers into our pool of resources.
+	- When traffic is low, vertical scaling is great option and the simplicity of vertical scaling is the main advantage. But it comes with serious limitations:
+		- Vertical Scaling has a hard limit. It is impossible to add unlimited CPU and memory to a single server.
+		- Does not have failover and redundancy. If one server goes down, the website/app goes down with it completely.
+	- Horizontal Scaling more desirable for large scale apps due to limitations of vertical scaling.
+- **Load Balancer**:
+	- ![[Screenshot 2024-10-04 at 6.30.48 PM.png]]
+	- Load Balancer evenly distributes incoming traffic among web servers that are defined in a load-balanced set.
+	- Acc to this diagram, for better security, private IPs are used for communication between servers. A private IP is an IP address reachable only between servers in the same network -> however it is unreachable over the internet. Load balancer communicates with web servers through private IPs.
+	- When a load balancer and a second web server are added , we solved no failover issue and improved the availability of the web tier. Explanation:
+		- If server 1 goes offline, all the traffic will be routed to server 2. This prevents the website from going offline. We will also add a new healthy web server to the server pool to balance the load.
+		- If the website traffic grows rapidly, and 2 servers are not enough to handle the traffic, the load balancer can handle this problem gracefully. We only need to add more servers to the web server pool, and the load balancer automatically starts to send requests to them.
+	- Data tier ?
+		- current design has one database, so it does not support failover and redundancy. 
+		- Database replication is a common technique to address those problems.
+- **Database Replication**:
+	- ![[Screenshot 2024-10-04 at 6.48.08 PM.png]]
+	- Master DB -> Only supports write operations. A slave db gets copies of the data from the master db and only supports read operations.
+	- All the data-modifying cmds like insert, delete or update must be sent to the master db.
+	- Most applications require a much higher ratio of reads to writes; thus the number of slave dbs in a system is usually larger than the number of master dbs.
+	- Advantages of db replication:
+		- Better perf -> all writes and updates happen in the master nodes; whereas read operations are distributed across slave nodes.
+			- This model improves perf because it allows more queries to be processed in parallel.
+		- Reliability -> If one of our db servers is destroyed by a natural disaster, such as a typhoon or an earthquake, data is still preserved. We do not need to worry about data loss because data is replicated across multiple locations.
+		- High Availability -> By replicating data across different locations, our website remains in operation even if a db is offline as we can access data stored in another db server.
