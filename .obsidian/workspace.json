@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "system-design/session-0.md",
+                "file": "TODO/13 Oct 2024.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 361.5,
-    "collapsed": true
+    "width": 361.5
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "system-design/session-0.md",
+                "file": "TODO/13 Oct 2024.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "system-design/session-0.md",
+                "file": "TODO/13 Oct 2024.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "system-design/session-0.md"
+                "file": "TODO/13 Oct 2024.md"
               }
             }
           }
@@ -158,8 +157,10 @@
   },
   "active": "d63d79cb13937f03",
   "lastOpenFiles": [
-    "golang-backend/session1.md",
     "system-design/session-0.md",
+    "TODO/13 Oct 2024.md",
+    "TODO",
+    "golang-backend/session1.md",
     "golang-backend",
     "system-design/Screenshot 2024-10-04 at 6.48.08 PM.png",
     "system-design/Screenshot 2024-10-04 at 6.30.48 PM.png",
@@ -195,13 +196,11 @@
     "PL/real-world-ocaml/part1/Untitled.md",
     "PL/real-world-ocaml/part1",
     "PL/real-world-ocaml",
-    "design-patterns/creational/abstract-factory.md",
     "design-patterns/creational",
     "design-patterns",
     "PL/reason-ocaml-meetup/Screenshot 2024-09-20 at 6.36.39 PM.png",
     "PL/reason-ocaml-meetup",
     "PL/functional-programming-cs3110",
-    "db-internals",
     "ideas-thoughts/self-sabotage-16_7_24/Screenshot 2024-07-16 at 11.58.37 AM.png",
     "100xdevs/Screenshot 2024-07-03 at 11.56.55 AM.png",
     "Untitled.canvas"
