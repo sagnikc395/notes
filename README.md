@@ -1,2 +1,2 @@
 ## notes
-My notes backup on various stuff and others.
+My notes and stuff.
