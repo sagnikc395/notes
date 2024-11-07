@@ -1,6 +1,8 @@
 [
-  "svelte-syntax-highlighter",
   "obsidian-annotator",
   "templater-obsidian",
-  "longform"
+  "longform",
+  "obsidian-tasks-plugin",
+  "obsidian-excalidraw-plugin",
+  "obsidian-git"
 ]
