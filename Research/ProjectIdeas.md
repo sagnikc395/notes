@@ -128,6 +128,7 @@ This project involves creating a system that listens for changes in a database a
 - **Scalability and Fault Tolerance**: Implementing this project will show your understanding of scalability, fault tolerance, and data consistency, crucial for modern database and storage systems.
 
 ### Building a Mini Event Streaming Platform like Kafka from Scratch
+- [[franz]]
 - (also present as a codecrafters challenge)
 -  Project Overview
 	- A mini event-streaming platform functions as a publish-subscribe messaging system where **producers** send messages (events) to **topics**, and **consumers** subscribe to topics to receive messages. The platform should handle message ordering, persistence, durability, and allow multiple consumers to process the same message independently.
