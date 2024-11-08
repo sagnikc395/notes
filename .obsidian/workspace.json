@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d95bc726ead95ab0",
+        "id": "2d7e06d9bfc5ce92",
         "type": "tabs",
         "children": [
           {
-            "id": "9833c3085ac3cf79",
+            "id": "88a3971dfefe9bd4",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Research/ProjectIdeas.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ProjectIdeas"
             }
           }
         ]
@@ -173,19 +177,24 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
   "active": "fca42503e2f333bb",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2024-11-08 15.01.27.excalidraw.md",
+    "Research/ProjectIdeas.md",
+    "Excalidraw",
+    "Research/franz",
+    "Research/db-optimization-and-indexing-simulator",
+    "Research/cmu-intro-to-db/Lecture 1.md",
     "demo/thinking fast and slow.md",
     "Finance/README.md",
     "Finance/18.S096_topics_in_maths_w_apps_to_finance/Summary.md",
     "Finance/18.S096_topics_in_maths_w_apps_to_finance",
     "Finance/15.401_finance_theory_1/Summary.md",
     "Finance/15.401_finance_theory_1",
-    "Research/cmu-intro-to-db/Lecture 1.md",
     "Finance",
     "Research/cmu-intro-to-db/Summary.md",
     "Research/README.md",
@@ -198,13 +207,10 @@
     "interviews/dsa/README.md",
     "TODO/13 Oct 2024.md",
     "interviews/dsa",
-    "dev",
     "thots/Arts and Culture/Introduction.md",
     "thots/Arts and Culture/Index.md",
     "Personal/what am i thinking today ?.md",
-    "interviews",
     "interviews/system-design/session-0.md",
-    "TODO",
     "golang-backend/session1.md",
     "interviews/system-design/Screenshot 2024-10-04 at 6.48.08 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.30.48 PM.png",
@@ -218,8 +224,6 @@
     "100xdevs/week3/week3.5.md",
     "100xdevs/week3/week3.4.md",
     "100xdevs/week3/week3.2.md",
-    "100xdevs/week2/week2.4.md",
-    "100xdevs/week2/week 2.3.md",
     "100xdevs/week1/Screenshot 2024-04-27 at 10.45.21 PM.png",
     "100xdevs/week4/the discovery of gravity, painting, two color.jpg",
     "PL/reason-ocaml-meetup/Screenshot 2024-09-20 at 6.36.39 PM.png",
