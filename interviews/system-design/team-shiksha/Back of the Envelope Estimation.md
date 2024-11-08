@@ -1,4 +1,4 @@
-
+- [[8 nov 2024| Task #3]]
 - Sometimes we are asked to estimate system capacity or performance requirements using the back-of-envelope estimate.
 - We create common thought experiments and common perf numbers.
 - Eg: Build a URL shortner for Insta,Twitter etc.
@@ -53,4 +53,5 @@
 	- n number of ways to geoblock according to various properties.
 	- in a broader sense , this is also we can do geoblocking. 
 
-- HW: come up with a system to build a Rate limiter that can handle the load.
+- HW: [[8 nov 2024 | Task # 2 ]]
+- 
