@@ -13,7 +13,7 @@ For backend engineering interviews, mainly there are 3-4 things that are importa
 	- Language of Choice: Python, versatile , easy to solve, allowed for the assesments of many companies and can get the solutions easily.
 	- Target: Try to complete the topics before 31 Jan,2025.
 
-3. System Design -> 
+2. System Design -> 
 	- [[system-design]] 
 	- High Level System Design is required for most interviews where a fixed types of questions are asked and we are required to discuss the tradeoffs of using and implementing various software systems that are required.
 	- Coding principles , styling conventions are focussed on, and also if using Object Oriented Programming, then also need to study design patterns to understand where they are being used in the software.
