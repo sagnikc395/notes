@@ -5,7 +5,15 @@ tags:
   - databases
   - cmudb
 ---
-TODO
+### Database Systems Background:
+- what is a db ? clickhouse, imdb, dictionary
+- clichkouse is a DB management systems, rest are database 
+- Database -> organized collection of inter-related data that models some aspect of the real-world.
+- Databases are the core component of most computer applications.
+- Eg: create a db that models a digital music store to keep track of artists and albums 
+- Info we ned to keep track of in our store:
+	- Info about Artists 
+	- The Albums those Artists released.
 
 
 
@@ -26,6 +34,12 @@ abstracted away the thing by the data and the query planner and abstracted away 
 *Integrity* -> Ensure the database's contents satisfy the constraints.
 
 *Manipulation* -> Programming interface for accessing and modifying a database's contents.
+
+
+### Relational Algebra 
+
+### Alternative Data Models 
+
 
 
 
