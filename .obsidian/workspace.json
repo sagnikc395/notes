@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ea77e6520785a03e",
+        "id": "182f215a451af04d",
         "type": "tabs",
         "children": [
           {
-            "id": "cf6db31a9e6562d6",
+            "id": "f65b3b22dcd0f3f2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Research/cmu-intro-to-db/Lecture 1.md",
+                "file": "TODO/TODO - 12_11_24.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 1"
+              "title": "TODO - 12_11_24"
             }
           }
         ]
@@ -181,14 +181,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "fca42503e2f333bb",
+  "active": "f65b3b22dcd0f3f2",
   "lastOpenFiles": [
+    "Research/cmu-intro-to-db/Lecture 1.md",
+    "TODO/TODO - 12_11_24.md",
+    "Research/masters - work description.md",
+    "Research/ProjectIdeas.md",
     "cs-fundamentals/computer-networks",
     "cs-fundamentals/operating-systems",
     "cs-fundamentals/computer-architecture",
     "cs-fundamentals",
     "Research/cmu-intro-to-db/Summary.md",
-    "Research/cmu-intro-to-db/Lecture 1.md",
     "thots/music-reviews/blonde.md",
     "dev/boot.dev/golang-learn/golang concurrency 1.md",
     "thots/music-reviews",
@@ -208,17 +211,14 @@
     "interviews/system-design/team-shiksha",
     "interviews/dsa/dsa.md",
     "interviews/dsa/READM.md",
-    "Research/ProjectIdeas.md",
     "Research/franz/franz.md",
     "Research/franz/Building a Mini Event Streaming Platform like Kafka from Scratch.md",
     "Excalidraw/Drawing 2024-11-08 15.01.27.excalidraw.md",
     "Excalidraw",
-    "Research/franz",
     "demo/thinking fast and slow.md",
     "Finance/README.md",
     "Finance/18.S096_topics_in_maths_w_apps_to_finance/Summary.md",
     "Finance/15.401_finance_theory_1/Summary.md",
-    "Research/README.md",
     "interviews/system-design/Screenshot 2024-10-04 at 6.48.08 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.30.48 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.21.15 PM.png",
