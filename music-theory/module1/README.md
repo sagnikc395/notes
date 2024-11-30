@@ -1,0 +1,16 @@
+
+- fundamentals of music theory 
+- not a scientific theory , disciplined in a academic way of talking and knowing about music and requires a combination of practical and theoretical skills.
+- scope of human music conventions goes past the classroom knowledge of music theory.
+- builds upon european classical music theory.
+- focusses on literacy and things we can write down.
+- languages we can focus on build on theory.
+	- teach the building blocks of stave notation as a fundamental idea of music theory.
+	- musical concepts come from people of the world -> start from a people/ cultural context.
+- musical notation in its long and varied history starts as notations and visualize them and imagine and create with them.
+- it integrates with out lives and integrates with our lives.
+- Stave notation has become a global representation of the music theory and music notation.
+- common practice harmony -> way to refer to a common harmonic music ; eras of music classical.
+- here we are not describing a coherent scientific theory, sound is real. Most part of music theory we are studying is cultural convention. This course deals with music literacy.
+- Stave notation , based on elements on Eurological music theory, has become a very widespread system of communicating about musical ideas. And it's the system we are learning in this course.
+- As a symbolic systems is notationally and musically neutral, however as a political and cultural system it is not.

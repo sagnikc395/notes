@@ -11,10 +11,14 @@
             "id": "2738d827e639a84d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "music-theory/module1/musical-notes.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "musical-notes"
             }
           }
         ]
@@ -83,7 +87,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -179,6 +184,15 @@
   },
   "active": "2738d827e639a84d",
   "lastOpenFiles": [
+    "music-theory/module1/Screenshot 2024-11-30 at 12.58.50 PM.png",
+    "music-theory/module1/Screenshot 2024-11-30 at 12.56.07 PM.png",
+    "music-theory/module1/Screenshot 2024-11-30 at 12.52.28 PM.png",
+    "music-theory/module1/Screenshot 2024-11-30 at 12.51.48 PM.png",
+    "music-theory/module1/README.md",
+    "music-theory/module1/musical-notes.md",
+    "music-theory/README.md",
+    "music-theory/module1",
+    "music-theory",
     "Research/franz/franz.md",
     "Research/what-is-pl-research.md",
     "Research/pl-research-2.md",
@@ -207,14 +221,8 @@
     "interviews/system-design/session-0.md",
     "interviews/system-design/system-design.md",
     "interviews/README.md",
-    "interviews/system-design/team-shiksha",
     "interviews/dsa/dsa.md",
     "interviews/dsa/READM.md",
-    "Research/franz/Building a Mini Event Streaming Platform like Kafka from Scratch.md",
-    "Excalidraw/Drawing 2024-11-08 15.01.27.excalidraw.md",
-    "Excalidraw",
-    "demo/thinking fast and slow.md",
-    "Finance/README.md",
     "interviews/system-design/Screenshot 2024-10-04 at 6.48.08 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.30.48 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.21.15 PM.png",
@@ -222,9 +230,6 @@
     "interviews/system-design/Screenshot 2024-10-04 at 6.14.55 PM.png",
     "100xdevs/week1/Screenshot 2024-04-27 at 10.45.21 PM.png",
     "100xdevs/week4/the discovery of gravity, painting, two color.jpg",
-    "PL/reason-ocaml-meetup/Screenshot 2024-09-20 at 6.36.39 PM.png",
-    "ideas-thoughts/self-sabotage-16_7_24/Screenshot 2024-07-16 at 11.58.37 AM.png",
-    "100xdevs/Screenshot 2024-07-03 at 11.56.55 AM.png",
     "Untitled.canvas"
   ]
 }
