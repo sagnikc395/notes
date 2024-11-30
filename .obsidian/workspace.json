@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "182f215a451af04d",
+        "id": "76ac3116582e4b6b",
         "type": "tabs",
         "children": [
           {
-            "id": "f65b3b22dcd0f3f2",
+            "id": "2738d827e639a84d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Research/franz/franz.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "franz"
+              "title": "New tab"
             }
           }
         ]
@@ -181,8 +177,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f65b3b22dcd0f3f2",
+  "active": "2738d827e639a84d",
   "lastOpenFiles": [
+    "Research/franz/franz.md",
     "Research/what-is-pl-research.md",
     "Research/pl-research-2.md",
     "TODO/TODO - 12_11_24.md",
@@ -213,7 +210,6 @@
     "interviews/system-design/team-shiksha",
     "interviews/dsa/dsa.md",
     "interviews/dsa/READM.md",
-    "Research/franz/franz.md",
     "Research/franz/Building a Mini Event Streaming Platform like Kafka from Scratch.md",
     "Excalidraw/Drawing 2024-11-08 15.01.27.excalidraw.md",
     "Excalidraw",
