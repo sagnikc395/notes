@@ -1,0 +1,2 @@
+- Vertical distances bw notes.
+- Octaves are 8 notes.(A,B,C,D,E,G,A)

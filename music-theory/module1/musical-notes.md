@@ -22,4 +22,9 @@
 - So the octave of D will be the image of this along the horizontal axis.
 - Some Nice ways to remember the G cleff:
 	![[Screenshot 2024-11-30 at 12.58.50 PM.png]]
-- 
+
+### Early Music Notation :
+- before the Standard Stave notation, we had the Neumes notation.
+- This type of early notation - neumes - gives some indication about how to "realize" (perform) this 14th century chant.
+- There are words, references lines and some marks to indicate some approximate pitches.
+

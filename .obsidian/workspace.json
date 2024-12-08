@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "76ac3116582e4b6b",
+        "id": "86fea229eee060a1",
         "type": "tabs",
         "children": [
           {
-            "id": "2738d827e639a84d",
+            "id": "32d27e2fa0d7cd14",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dev/web-dev-stuff/typescript-guide.md",
+                "file": "dev/effect-ts/effect.ts crash course.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "typescript-guide"
+              "title": "effect.ts crash course"
             }
           }
         ]
@@ -87,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -182,8 +181,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2738d827e639a84d",
+  "active": "32d27e2fa0d7cd14",
   "lastOpenFiles": [
+    "thots/stuff/sense, reference and language.md",
+    "dev/effect-ts/effect.ts crash course.md",
+    "dev/effect-ts",
+    "blog-posts",
+    "music-theory/module1/Octaves.md",
     "music-theory/module1/musical-notes.md",
     "dev/web-dev-stuff/typescript-guide.md",
     "music-theory/module1/Screenshot 2024-11-30 at 12.58.50 PM.png",
@@ -213,17 +217,12 @@
     "thots/stuff/no new ideas.md",
     "dev/boot.dev/golang-learn",
     "thots/stuff/about soltitude and growing old.md",
-    "thots/stuff",
     "interviews/system-design/team-shiksha/Back of the Envelope Estimation.md",
     "TODO/8 nov 2024.md",
     "interviews/system-design/team-shiksha/TODO.md",
-    "interviews/golang-course",
     "Excalidraw/Drawing 2024-11-08 18.39.56.excalidraw.md",
     "interviews/system-design/session-0.md",
     "interviews/system-design/system-design.md",
-    "interviews/README.md",
-    "interviews/dsa/dsa.md",
-    "interviews/dsa/READM.md",
     "interviews/system-design/Screenshot 2024-10-04 at 6.48.08 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.30.48 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.21.15 PM.png",
