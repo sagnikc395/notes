@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "86fea229eee060a1",
+        "id": "7ac85445bd432df0",
         "type": "tabs",
         "children": [
           {
-            "id": "32d27e2fa0d7cd14",
+            "id": "cc94d756cad429fc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dev/effect-ts/effect.ts crash course.md",
+                "file": "cs-fundamentals/computer-architecture/Lecture 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "effect.ts crash course"
+              "title": "Lecture 1"
             }
           }
         ]
@@ -87,7 +87,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -166,7 +167,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,10 +183,16 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "32d27e2fa0d7cd14",
+  "active": "cc94d756cad429fc",
   "lastOpenFiles": [
-    "thots/stuff/sense, reference and language.md",
+    "cs-fundamentals/README.md",
+    "TODO/TODO - 12_11_24.md",
+    "cs-fundamentals/Screenshot 2024-12-13 at 12.48.17 PM.png",
+    "cs-fundamentals/operating-systems/README.md",
+    "cs-fundamentals/computer-architecture/README.md",
+    "cs-fundamentals/computer-architecture/Lecture 1.md",
     "dev/effect-ts/effect.ts crash course.md",
+    "thots/stuff/sense, reference and language.md",
     "dev/effect-ts",
     "blog-posts",
     "music-theory/module1/Octaves.md",
@@ -201,7 +209,6 @@
     "Research/franz/franz.md",
     "Research/what-is-pl-research.md",
     "Research/pl-research-2.md",
-    "TODO/TODO - 12_11_24.md",
     "Research/cmu-intro-to-db/Lecture 1.md",
     "Research/masters - work description.md",
     "Research/ProjectIdeas.md",
@@ -218,17 +225,11 @@
     "dev/boot.dev/golang-learn",
     "thots/stuff/about soltitude and growing old.md",
     "interviews/system-design/team-shiksha/Back of the Envelope Estimation.md",
-    "TODO/8 nov 2024.md",
-    "interviews/system-design/team-shiksha/TODO.md",
-    "Excalidraw/Drawing 2024-11-08 18.39.56.excalidraw.md",
-    "interviews/system-design/session-0.md",
-    "interviews/system-design/system-design.md",
     "interviews/system-design/Screenshot 2024-10-04 at 6.48.08 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.30.48 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.21.15 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.15.41 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.14.55 PM.png",
-    "100xdevs/week1/Screenshot 2024-04-27 at 10.45.21 PM.png",
     "Untitled.canvas"
   ]
 }
