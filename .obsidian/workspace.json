@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cs-fundamentals/computer-architecture/Lecture 1.md",
+                "file": "notes-to-self/agi and my existential risk.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 1"
+              "title": "agi and my existential risk"
             }
           }
         ]
@@ -87,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -185,12 +184,25 @@
   },
   "active": "cc94d756cad429fc",
   "lastOpenFiles": [
+    "templates/chapter.md",
+    "notes-to-self/agi and my existential risk.md",
+    "Research/rusty/ch1.md",
+    "notes-to-self",
+    "Research/rusty/README.md",
+    "Research/ProjectIdeas.md",
+    "Research/rusty",
+    "Research/README.md",
+    "Research/masters - work description.md",
+    "Research/what-is-pl-research.md",
+    "Research/pl-research-2.md",
+    "cs-fundamentals/computer-architecture/Lecture 1.md",
+    "cs-fundamentals/cs5010/README.md",
+    "cs-fundamentals/cs5010",
     "cs-fundamentals/README.md",
     "TODO/TODO - 12_11_24.md",
     "cs-fundamentals/Screenshot 2024-12-13 at 12.48.17 PM.png",
     "cs-fundamentals/operating-systems/README.md",
     "cs-fundamentals/computer-architecture/README.md",
-    "cs-fundamentals/computer-architecture/Lecture 1.md",
     "dev/effect-ts/effect.ts crash course.md",
     "thots/stuff/sense, reference and language.md",
     "dev/effect-ts",
@@ -207,24 +219,12 @@
     "music-theory/module1",
     "music-theory",
     "Research/franz/franz.md",
-    "Research/what-is-pl-research.md",
-    "Research/pl-research-2.md",
     "Research/cmu-intro-to-db/Lecture 1.md",
-    "Research/masters - work description.md",
-    "Research/ProjectIdeas.md",
     "cs-fundamentals/computer-networks",
     "cs-fundamentals/operating-systems",
     "cs-fundamentals/computer-architecture",
-    "cs-fundamentals",
     "Research/cmu-intro-to-db/Summary.md",
     "thots/music-reviews/blonde.md",
-    "dev/boot.dev/golang-learn/golang concurrency 1.md",
-    "thots/music-reviews",
-    "TODO/9 Nov 2024.md",
-    "thots/stuff/no new ideas.md",
-    "dev/boot.dev/golang-learn",
-    "thots/stuff/about soltitude and growing old.md",
-    "interviews/system-design/team-shiksha/Back of the Envelope Estimation.md",
     "interviews/system-design/Screenshot 2024-10-04 at 6.48.08 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.30.48 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.21.15 PM.png",
