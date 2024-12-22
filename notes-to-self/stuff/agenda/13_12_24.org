@@ -1,0 +1,12 @@
+** Topics
+
+** Videos:
+
+- Existensialism and Godel:
+  - Video : [[https://www.youtube.com/watch?v=C4t1pU5pNZI][Godelian Awareness and the Death of Existentialism]]
+  - Tags : godel, philosophy, existensialism
+  - TODO:
+    - Write a 300 page essay summarising my thoughts and ideas of what
+      the author is trying to say.
+
+- 
