@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "adc5f9edb7377f99",
+        "id": "53f51c326f6bbed2",
         "type": "tabs",
         "children": [
           {
-            "id": "a4a3eb8097c8a0af",
+            "id": "922d5e1737ecf562",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "project-aleph/Aleph Long Shot System Reservoir.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Aleph Long Shot System Reservoir"
             }
           }
         ]
@@ -83,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -178,8 +181,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a4a3eb8097c8a0af",
+  "active": "fca42503e2f333bb",
   "lastOpenFiles": [
+    "project-aleph/Aleph Core Schema.md",
+    "project-aleph/Aleph Long Shot System Reservoir.md",
+    "Research/crafting-interpreters/ch2.md",
+    "project-aleph",
+    "Research/project-ideas/franz.md",
+    "Research/crafting-interpreters/README.md",
+    "Research/README.md",
+    "Research/project-ideas",
+    "Research/general",
+    "Research/crafting-interpreters",
     "notes-to-self/philosophy/basics of classic western philosophy.md",
     "notes-to-self/stuff/agi and my existential risk.md",
     "notes-to-self/philosophy",
@@ -187,12 +200,11 @@
     "Research/rusty/ch1.md",
     "notes-to-self",
     "Research/rusty/README.md",
-    "Research/ProjectIdeas.md",
+    "Research/project-ideas/ProjectIdeas.md",
     "Research/rusty",
-    "Research/README.md",
-    "Research/masters - work description.md",
-    "Research/what-is-pl-research.md",
-    "Research/pl-research-2.md",
+    "Research/project-ideas/masters - work description.md",
+    "Research/general/what-is-pl-research.md",
+    "Research/general/pl-research-2.md",
     "cs-fundamentals/computer-architecture/Lecture 1.md",
     "cs-fundamentals/cs5010/README.md",
     "cs-fundamentals/cs5010",
@@ -212,15 +224,6 @@
     "music-theory/module1/Screenshot 2024-11-30 at 12.56.07 PM.png",
     "music-theory/module1/Screenshot 2024-11-30 at 12.52.28 PM.png",
     "music-theory/module1/Screenshot 2024-11-30 at 12.51.48 PM.png",
-    "music-theory/module1/README.md",
-    "music-theory/README.md",
-    "music-theory/module1",
-    "music-theory",
-    "Research/franz/franz.md",
-    "Research/cmu-intro-to-db/Lecture 1.md",
-    "cs-fundamentals/computer-networks",
-    "cs-fundamentals/operating-systems",
-    "Research/cmu-intro-to-db/Summary.md",
     "interviews/system-design/Screenshot 2024-10-04 at 6.48.08 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.30.48 PM.png",
     "interviews/system-design/Screenshot 2024-10-04 at 6.21.15 PM.png",
