@@ -11,12 +11,14 @@
             "id": "c9389536b75f7749",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Papers/transformer/Screenshot 2024-12-29 at 12.06.36 AM.png"
+                "file": "README.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Screenshot 2024-12-29 at 12.06.36 AM"
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -85,7 +87,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -179,12 +182,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d680898ef741b3b8",
+  "active": "c9389536b75f7749",
   "lastOpenFiles": [
+    "Papers/transformer/Screenshot 2024-12-29 at 12.06.36 AM.png",
     "Papers/transformer/Screenshot 2024-12-29 at 12.08.15 AM.png",
     "Papers/transformer/Attention is All You Need.md",
     "Papers/transformer/matrix-multiplication.md",
-    "Papers/transformer/Screenshot 2024-12-29 at 12.06.36 AM.png",
     "Papers/transformer/Screenshot 2024-12-28 at 11.55.14 PM.png",
     "Papers/transformer/Screenshot 2024-12-28 at 11.47.22 PM.png",
     "Papers/transformer/Untitled.canvas",
