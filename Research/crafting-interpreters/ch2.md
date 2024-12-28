@@ -1,6 +1,8 @@
 ---
 title: Map of the Territory
-tags: 
+tags:
+  - programming-languages
+  - compilers
 date: 27/12/24
 ---
 ## Parts of the Language:
@@ -70,3 +72,18 @@ date: 27/12/24
 ### Transpilers:
 - This are called as source-to-source compiler or a transcompiler. In this we convert the front end of our language to the back end instead of doing all the work to lower the semantics to some primitive target language, we produce a string of valid source code for some other language, that is about as high level as ours.
 - Most transpilers today work on higher level languages. After the viral spread of UNIX to machines various and sundry, there began a long tradition of compilers that produced C as their output language. C compilers were available everywehre UNIX was and produced efficient code, so targeting C was a good way to get our language running on a lot of architectures.
+- Web browsers are the machines of today, and thier machine code is JS, so these days it seems almost every language out there has a compiler that targets JS since that's the main way to get your code running in a browser.
+
+### Just-in-time Compilation:
+- The fastest way to execute code is by compiling it to machine code, but we might not know what is the architecture of our end-users's machine supports.
+- What we can do is on the end user's machine, when the program is loaded - either from source(in JS), or platform dependent bytecode(Java,C#)- we compile it to native code for the architecture their computer supports. 
+- Most sophisticated JITs inset profiling hooks into the generate code to see what regions are most performance critical and what kind of data is flowing through them. Then,over time, they will automatically recompile those hot spots with more advanced optimizations.
+
+## Compilers and Interpreters:
+- Compiling is an implementation technique that involves translating a source language to some other - usually lower-level- form. When we genreate bytecode or machine code, we are compiling. When we transpile to another. high-level language, we are also compiling to.
+- When we say language implementation is a compiler we mean it translates source code to some other form but doesnt execute ut. The user has to take the resulting output and run it themselves.
+- Conversely, when we say an implementation is an interpreter, we mean it takes in source code and executes it immediately. It runs programs from source.
+
+
+- What of CPython ? When we run our Python program , the code is parsed and converted to an internal bytecode format , which is then executed inside the vm.From other user's perspective, this is clearly an interpreter. But if we look under CPython's , we see there is definitely some compilation going on.
+- So thjhis is both an interpreter and has a compiler.
