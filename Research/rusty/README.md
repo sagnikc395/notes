@@ -7,4 +7,4 @@ tags:
 ---
 ## Rusty 
 
-Learning Rust for learning about building Compilers and Virtual Machines.
+Rust Programming Language lectures notes and stuff.
