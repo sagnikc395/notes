@@ -85,8 +85,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -180,7 +179,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c9389536b75f7749",
+  "active": "d680898ef741b3b8",
   "lastOpenFiles": [
     "Papers/transformer/Screenshot 2024-12-29 at 12.08.15 AM.png",
     "Papers/transformer/Attention is All You Need.md",
