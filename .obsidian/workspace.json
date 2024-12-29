@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "8f11279c2e228f23",
+        "id": "f0f8b745108bdcfb",
         "type": "tabs",
         "children": [
           {
-            "id": "c9389536b75f7749",
+            "id": "efdfa45b960cb3ea",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "README"
+              "title": "New tab"
             }
           }
         ]
@@ -87,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -182,8 +177,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c9389536b75f7749",
+  "active": "fca42503e2f333bb",
   "lastOpenFiles": [
+    "Research/FP/Semigroup.md",
+    "Research/FP",
+    "README.md",
     "Papers/transformer/Screenshot 2024-12-29 at 12.06.36 AM.png",
     "Papers/transformer/Screenshot 2024-12-29 at 12.08.15 AM.png",
     "Papers/transformer/Attention is All You Need.md",
@@ -221,7 +219,6 @@
     "Research/build-a-lisp",
     "Research/AI_Research/project-aleph/Aleph Long Shot System Reservoir.md",
     "Research/AI_Research/project-aleph/Aleph Core Schema.md",
-    "Research/AI_Research/project-aleph",
     "Research/project-ideas/franz.md",
     "Research/crafting-interpreters/README.md",
     "Research/README.md",
@@ -229,7 +226,6 @@
     "notes-to-self/stuff/agi and my existential risk.md",
     "templates/chapter.md",
     "Research/project-ideas/ProjectIdeas.md",
-    "Research/project-ideas/masters - work description.md",
-    "Research/general/what-is-pl-research.md"
+    "Research/project-ideas/masters - work description.md"
   ]
 }
