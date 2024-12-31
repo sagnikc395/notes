@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f0f8b745108bdcfb",
+        "id": "1423d4f1000ebe86",
         "type": "tabs",
         "children": [
           {
-            "id": "efdfa45b960cb3ea",
+            "id": "9f51316260de6a9d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Research/rusty/ch4.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "ch4"
             }
           }
         ]
@@ -83,7 +87,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -177,15 +182,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "fca42503e2f333bb",
+  "active": "9f51316260de6a9d",
   "lastOpenFiles": [
+    "Papers/flash-attention/FlashAttention.md",
+    "Papers/transformer/matrix-multiplication.md",
+    "Papers/transformer/Attention is All You Need.md",
+    "Research/rusty/ch4.md",
+    "Papers/flash-attention",
     "Research/FP/Semigroup.md",
     "Research/FP",
     "README.md",
     "Papers/transformer/Screenshot 2024-12-29 at 12.06.36 AM.png",
     "Papers/transformer/Screenshot 2024-12-29 at 12.08.15 AM.png",
-    "Papers/transformer/Attention is All You Need.md",
-    "Papers/transformer/matrix-multiplication.md",
     "Papers/transformer/Screenshot 2024-12-28 at 11.55.14 PM.png",
     "Papers/transformer/Screenshot 2024-12-28 at 11.47.22 PM.png",
     "Papers/transformer/Untitled.canvas",
@@ -203,7 +211,6 @@
     "dev/boot-dev-notes",
     "dev",
     "Research/crafting-interpreters/ch2.md",
-    "Research/rusty/ch4.md",
     "Research/rusty/ch1.md",
     "Research/rusty/README.md",
     "cs-fundamentals/operating-systems/lec2.md",
@@ -216,7 +223,6 @@
     "Research/AI_Research/README.md",
     "Research/AI_Research",
     "Research/monkey-lang-interpreter",
-    "Research/build-a-lisp",
     "Research/AI_Research/project-aleph/Aleph Long Shot System Reservoir.md",
     "Research/AI_Research/project-aleph/Aleph Core Schema.md",
     "Research/project-ideas/franz.md",
@@ -225,7 +231,6 @@
     "notes-to-self/philosophy/basics of classic western philosophy.md",
     "notes-to-self/stuff/agi and my existential risk.md",
     "templates/chapter.md",
-    "Research/project-ideas/ProjectIdeas.md",
-    "Research/project-ideas/masters - work description.md"
+    "Research/project-ideas/ProjectIdeas.md"
   ]
 }
