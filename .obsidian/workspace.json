@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1423d4f1000ebe86",
+        "id": "f31044826613cb9e",
         "type": "tabs",
         "children": [
           {
-            "id": "9f51316260de6a9d",
+            "id": "7e19a8d96051d9d4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Research/rusty/ch4.md",
+                "file": "dev/boot-dev-notes/Python From Scratch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ch4"
+              "title": "Python From Scratch"
             }
           }
         ]
@@ -182,12 +182,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "9f51316260de6a9d",
+  "active": "d680898ef741b3b8",
   "lastOpenFiles": [
+    "Research/rusty/ch4.md",
     "Papers/flash-attention/FlashAttention.md",
     "Papers/transformer/matrix-multiplication.md",
     "Papers/transformer/Attention is All You Need.md",
-    "Research/rusty/ch4.md",
     "Papers/flash-attention",
     "Research/FP/Semigroup.md",
     "Research/FP",
