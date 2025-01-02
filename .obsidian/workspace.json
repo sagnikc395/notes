@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dev/boot-dev-notes/Python From Scratch.md",
+                "file": "dev/boot-dev-notes/Shells and Terminals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Python From Scratch"
+              "title": "Shells and Terminals"
             }
           }
         ]
@@ -87,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -185,6 +184,7 @@
   "active": "d680898ef741b3b8",
   "lastOpenFiles": [
     "dev/boot-dev-notes/Python From Scratch.md",
+    "dev/boot-dev-notes/Shells and Terminals.md",
     "Research/rusty/ch4.md",
     "Papers/flash-attention/FlashAttention.md",
     "Papers/transformer/matrix-multiplication.md",
@@ -230,7 +230,6 @@
     "Research/README.md",
     "notes-to-self/philosophy/basics of classic western philosophy.md",
     "notes-to-self/stuff/agi and my existential risk.md",
-    "templates/chapter.md",
-    "Research/project-ideas/ProjectIdeas.md"
+    "templates/chapter.md"
   ]
 }
