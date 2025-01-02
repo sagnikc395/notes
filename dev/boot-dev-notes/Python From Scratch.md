@@ -267,4 +267,315 @@ for tree in trees:
 # pine
 # maple
 ```
-- 
+- The built-in [float()](https://docs.python.org/3/library/functions.html#float) function can create a numeric floating point value of negative infinity. Because _every value_ will be greater than negative infinity, we can use it to help us accomplish our goal of finding the max value.
+
+```python
+negative_infinity = float("-inf")
+positive_infinity = float("inf")
+```
+- The modulo operator is the percent sign: `%`. It's important to recognize modulo is _not_ a percentage though! That's just the symbol we're using.
+
+```python
+remainder = 8 % 3
+# remainder = 2
+```
+
+- Python makes it easy to slice and dice lists to work only with the section you care about. One way to do this is to use the simple slicing operator, which is just a colon `:`.
+- With this operator, you can specify where to start and end the slice, and how to step through the original list. List slicing returns a _new list_ from the existing list.
+- The syntax is as follows:
+
+```python
+my_list[ start : stop : step ]
+```
+- We can also omit various sections ("start", "stop", or "step"). For example, `numbers[:3]` means "get all items from the start up to (but not including) index 3". `numbers[3:]` means "get all items from index 3 to the end".
+
+```python
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[:3] # Gives [0, 1, 2]
+numbers[3:] # Gives [3, 4, 5, 6, 7, 8, 9]
+```
+- only using the step section :
+```python
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[::2] # Gives [0, 2, 4, 6, 8]
+```
+- Negative indices count from the end of the list. For example, `numbers[-1]` gives the last item in the list, `numbers[-2]` gives the second last item, and so on.
+
+```python
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[-3:] # Gives [7, 8, 9]
+```
+- Concatenating two lists (smushing them together) is easy in Python, just use the `+` operator.
+
+```python
+total = [1, 2, 3] + [4, 5, 6]
+print(total)
+# Prints: [1, 2, 3, 4, 5, 6]
+```
+- Checking whether a value exists in a list is also really easy in Python, just use the `in` keyword.
+
+```python
+fruits = ["apple", "orange", "banana"]
+print("banana" in fruits)
+# Prints: True
+```
+
+- Python has a built-in keyword [del](https://docs.python.org/3/tutorial/datastructures.html#the-del-statement) that deletes items from objects. In the case of a list, you can delete specific indexes or entire slices.
+
+```python
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# delete the fourth item
+del nums[3]
+print(nums)
+# Output: [1, 2, 3, 5, 6, 7, 8, 9]
+
+# delete the second item up to (but not including) the fourth item
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+del nums[1:3]
+print(nums)
+# Output: [1, 4, 5, 6, 7, 8, 9]
+
+# delete all elements
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+del nums[:]
+print(nums)
+# Output: []
+```
+### Tuples:
+- [Tuples](https://docs.python.org/3/library/stdtypes.html#typesseq-tuple) are collections of data that are ordered and unchangeable. You can think of a tuple as a `List` with a fixed size. Tuples are created with round brackets:
+
+```python
+my_tuple = ("this is a tuple", 45, True)
+print(my_tuple[0])
+# this is a tuple
+print(my_tuple[1])
+# 45
+print(my_tuple[2])
+# True
+```
+- While it's typically considered bad practice to store items of different types in a List, it's not a problem with Tuples. Because they have a fixed size, it's easy to keep track of which indexes store which types of data.
+- Tuples are often used to store very small groups (like 2 or 3 items) of data. For example, you might use a tuple to store a dog's name and age.
+- You can easily assign the values of a tuple to variables using unpacking.
+
+```python
+dog = ("Fido", 4)
+dog_name, dog_age = dog
+print(dog_name)
+# Fido
+print(dog_age)
+# 4
+```
+- There is a special case for creating single-item tuples. You must include a comma so Python knows it's a tuple and not regular parentheses.
+- Check if list is empty:
+```python 
+ if not list_name:
+	 ... 
+```
+- reverse a list:
+```python 
+list_name[::-1]
+```
+
+- The `.split()` method in Python is called on a string and returns a list by splitting the string based on a given delimiter. If no delimiter is provided, it will split the string on whitespace. Here's a quick example:
+
+```python
+message = "hello there sam"
+words = message.split()
+print(words)
+# Prints: ["hello", "there", "sam"]
+```
+- The `.join()` method is called on a delimiter (what goes between all the words in the list), and takes a list of strings as input.
+
+```python
+list_of_words = ["hello", "there", "sam"]
+sentence = " ".join(list_of_words)
+print(sentence)
+# Prints: "hello there sam"
+```
+### Dictionaries:
+
+- [Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) in Python are used to store data values in `key` -> `value` pairs. Dictionaries are a great way to store groups of information.
+
+```python
+# use curly braces
+# add key-value pairs
+car = {
+  "brand": "Tesla",
+  "model": "3",
+  "year": 2019
+}
+```
+
+- Because dictionaries rely on unique keys, you can't have two of the same key in the same dictionary. If you try to use the same key twice, the first value will simply be overwritten.
+- A value is retrieved from a dictionary by specifying its corresponding key in square brackets. The square brackets look similar to indexing into a list.
+- You don't need to create a dictionary with values already inside. It is common to create a blank dictionary then populate it later using dynamic values. The syntax is the same as getting data out of a key, just use the assignment operator (`=`) to give that key a value.
+```python
+planets = {}
+planets["Earth"] = True
+planets["Pluto"] = False
+print(planets["Pluto"])
+# Prints False
+```
+- If you try to set the value of a key that already exists, you'll end up just updating the value of that key.
+- You can delete existing keys using the `del` keyword.
+```python
+names_dict = {
+    "jack": "bronson",
+    "jill": "mcarty",
+    "joe": "denver"
+}
+
+del names_dict["joe"]
+
+print(names_dict)
+# Prints: {'jack': 'bronson', 'jill': 'mcarty'}
+```
+- Notice that if you try to delete a key that doesn't exist, you'll get an _error_.
+- If you're unsure whether or not a key exists in a dictionary, use the `in` keyword.
+- We can iterate over a dictionary's keys using the same no-index syntax we used to iterate over the values in a list. With access to the dictionary's keys, we also have access to their corresponding values.
+```python
+fruit_sizes = {
+    "apple": "small",
+    "banana": "large",
+    "grape": "tiny"
+}
+
+for name in fruit_sizes:
+    size = fruit_sizes[name]
+    print(f"name: {name}, size: {size}")
+```
+- As of Python version `3.7`, dictionaries are _ordered_. In Python `3.6` and earlier, dictionaries were _unordered_.
+- Because dictionaries are ordered, the items have a defined order, and that order will _not_ change.
+- Unordered means that the items do _not_ have a defined order, so you couldn't refer to an item by using an index.
+
+### Sets:
+- [Sets](https://docs.python.org/3/tutorial/datastructures.html#sets) are _like_ Lists, but they are _unordered_ and they guarantee _uniqueness_. Only _ONE_ of each value can be in a set.
+
+```python
+fruits = {'apple', 'banana', 'grape'}
+print(type(fruits))
+# Prints: <class 'set'>
+
+print(fruits)
+# Prints: {'banana', 'grape', 'apple'}
+```
+- add :
+```python
+fruits = {'apple', 'banana', 'grape'}
+fruits.add('pear')
+print(fruits)
+# Prints: {'banana', 'grape', 'pear', 'apple'}
+```
+- Because the empty bracket `{}` syntax creates an empty dictionary, to create an _empty_ set, you need to use the `set()` function.
+
+```python
+fruits = set()
+fruits.add('pear')
+print(fruits)
+# Prints: {'pear'}
+```
+- Iterate(order not guranteed):
+ ```python
+fruits = {'apple', 'banana', 'grape'}
+for fruit in fruits:
+    print(fruit)
+    # Prints:
+    # banana
+    # grape
+    # apple
+```
+- [Sets](https://docs.python.org/3/tutorial/datastructures.html#sets) are _like_ Lists, but they are _unordered_ and they guarantee _uniqueness_. Only _ONE_ of each value can be in a set.
+
+```python
+fruits = {'apple', 'banana', 'grape'}
+print(type(fruits))
+# Prints: <class 'set'>
+
+print(fruits)
+# Prints: {'banana', 'grape', 'apple'}
+```
+- Removing Values: 
+```python
+fruits = {'apple', 'banana', 'grape'}
+fruits.remove('apple')
+print(fruits)
+# Prints: {'banana', 'grape'}
+```
+- With sets ,we can also do some set operations like add,difference etc:
+```python
+def find_missing_ids(first_ids, second_ids):
+    first_ids_set = set(first_ids)
+    second_ids_set = set(second_ids)
+    return list(first_ids_set.difference(second_ids_set))
+```
+
+### Exceptions:
+- You've probably encountered some errors in your code from time to time if you've gotten this far in the course. In Python, there are two main kinds of distinguishable errors.
+	- syntax errors
+	- exceptions
+- You probably know what these are by now. A syntax error is just the Python interpreter telling you that your code isn't adhering to proper Python syntax.
+
+```python
+this is not valid code, so it will error
+```
+- Even if your code has the right syntax, however, it may still cause an error when an attempt is made to execute it. Errors detected during execution are called "exceptions" and can be handled gracefully by your code. You can even raise your own exceptions when bad things happen in your code.
+- Python uses a [try-except](https://docs.python.org/3/tutorial/errors.html#handling-exceptions) pattern for handling errors.
+```python
+try:
+  10 / 0
+except Exception:
+  print("can't divide by zero")
+```
+- `try` block is executed until an exception is raised or it completes, whichever happens first. In this case, an exception is raised because division by zero is impossible. The `except` block is only executed if an exception is raised in the `try` block.
+- If we want to access the data from the exception, we use the following syntax:
+```python
+try:
+  10 / 0
+except Exception as e:
+  print(e)
+
+# prints "division by zero"
+```
+- `try` block is executed until an exception is raised or it completes, whichever happens first. In this case, a "divide by zero" error is raised because division by zero is impossible. The `except` block is only executed if an exception is raised in the `try` block. It then exposes the exception as data (`e` in our case) so that the program can handle the exception gracefully without crashing.
+- Errors are _not_ something to be scared of. Every program that runs in production is expected to manage errors on a constant basis. Our job as developers is to handle the errors gracefully and in a way that aligns with our user's expectations.An _error_ or _exception_ is raised when something bad happens, but as long as our code handles it as users expect it to, it's _not_ a bug. A bug is when code behaves in ways our users don't expect it to.
+- As a rule of thumb, you do not want to catch exceptions you raise within the same function block, for example:
+```python
+# don't do this
+def craft_sword(metal_bar):
+    try:
+        if metal_bar == "bronze":
+            return "bronze sword"
+        if metal_bar == "iron":
+            return "iron sword"
+        if metal_bar == "steel":
+            return "steel sword"
+        raise Exception("invalid metal bar")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+```
+- Instead, the caller should handle any potential error by wrapping the function call within a try/except block.
+```python
+# do this
+try:
+    craft_sword("gold bar")
+except Exception as e:
+    print(e)
+```
+- Important to understand is that there are different types of exceptions and we can handle them differently depending on the situation. Some exceptions are more specific, like `ZeroDivisionError` or `IndexError`, and some are more general, like the base `Exception`.
+- When handling exceptions, it’s important to catch the **most specific ones** first, because Python stops checking once it finds a matching exception handler. If you catch a more general Exception first, any specific errors will never get handled individually.
+- For example:
+```python
+try:
+    nums = [0, 1]
+    print(nums[2])
+except Exception:
+    print("An error occurred")
+except IndexError:
+    print("Index error")
+```
+- As seen in the example, you can also access the error using `as`, like this:
+```python
+except Exception as e:
+    print(e)
+```

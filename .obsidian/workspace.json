@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f31044826613cb9e",
+        "id": "0aea26ab3925856c",
         "type": "tabs",
         "children": [
           {
-            "id": "7e19a8d96051d9d4",
+            "id": "e80df02ed0cfaeec",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -184,6 +184,7 @@
   },
   "active": "d680898ef741b3b8",
   "lastOpenFiles": [
+    "dev/boot-dev-notes/Python From Scratch.md",
     "Research/rusty/ch4.md",
     "Papers/flash-attention/FlashAttention.md",
     "Papers/transformer/matrix-multiplication.md",
@@ -204,7 +205,6 @@
     "Untitled.canvas",
     "Papers/transformer",
     "Papers",
-    "dev/boot-dev-notes/Python From Scratch.md",
     "dev/boot-dev-notes/Untitled",
     "Research/crafting-interpreters/ch3.md",
     "dev/backend-fundamentals/backend engineering.md",
