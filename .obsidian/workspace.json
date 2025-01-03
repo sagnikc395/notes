@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0aea26ab3925856c",
+        "id": "9af8dd98a02194cb",
         "type": "tabs",
         "children": [
           {
-            "id": "e80df02ed0cfaeec",
+            "id": "814442a6f731367f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dev/boot-dev-notes/Shells and Terminals.md",
+                "file": "dev/boot-dev-notes/Object Oriented Programming in Python.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Shells and Terminals"
+              "title": "Object Oriented Programming in Python"
             }
           }
         ]
@@ -181,10 +181,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "e80df02ed0cfaeec",
+  "active": "814442a6f731367f",
   "lastOpenFiles": [
-    "dev/boot-dev-notes/Python From Scratch.md",
+    "dev/boot-dev-notes/Object Oriented Programming in Python.md",
+    "dev/boot-dev-notes/Git - 1.md",
     "dev/boot-dev-notes/Shells and Terminals.md",
+    "dev/boot-dev-notes/Python From Scratch.md",
     "Research/rusty/ch4.md",
     "Papers/flash-attention/FlashAttention.md",
     "Papers/transformer/matrix-multiplication.md",
@@ -228,8 +230,6 @@
     "Research/project-ideas/franz.md",
     "Research/crafting-interpreters/README.md",
     "Research/README.md",
-    "notes-to-self/philosophy/basics of classic western philosophy.md",
-    "notes-to-self/stuff/agi and my existential risk.md",
-    "templates/chapter.md"
+    "notes-to-self/philosophy/basics of classic western philosophy.md"
   ]
 }
