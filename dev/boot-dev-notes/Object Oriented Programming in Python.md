@@ -100,3 +100,133 @@ wall_sina = Wall(9, 8, 7)
 ```
 
 - Objects are an instance of a class.
+
+### Class Variables vs Instance Variables:
+- Instance variables vary from object to object and are **declared in the constructor.**
+
+```python
+class Wall:
+    def __init__(self):
+        self.height = 10
+
+south_wall = Wall()
+south_wall.height = 20 # only updates this instance of a wall
+print(south_wall.height)
+# prints "20"
+
+north_wall = Wall()
+print(north_wall.height)
+# prints "10"
+```
+- Class variables remain the same between instances of the same class and are **declared at the top level of a class definition**.
+
+```python
+class Wall:
+    height = 10
+
+south_wall = Wall()
+print(south_wall.height)
+# prints "10"
+
+Wall.height = 20 # updates all instances of a Wall
+
+print(south_wall.height)
+# prints "20"
+```
+
+
+- In other languages these types of variables are often called [static variables](https://en.wikipedia.org/wiki/Static_variable).
+
+- Variables, fields and properties
+	- The terms instance and class variable, field, property and attribute are used interchangeably and usually refer to the same concept in languages that support some form of object-oriented programming. Here's a quick reference for some popular languages:
+
+| Language   | Class variable | Instance variable |
+| ---------- | -------------- | ----------------- |
+| Python     | Class variable | Instance variable |
+| Go         | Field          | Field             |
+| JavaScript | Property       | Property          |
+| C#         | Static field   | Field             |
+| Java       | Static field   | Field             |
+
+- Which should I use?
+	- Generally speaking, _stay away from class variables_. Just like global variables, class variables are usually a bad idea because they make it hard to keep track of which parts of your program are making updates. However, it is important to understand how they work because you may see them out in the wild.
+
+### Encapsulation:
+- [Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)) is the practice of hiding complexity inside a ["black box"](https://en.wikipedia.org/wiki/Black_box) so that it's easier to focus on the problem at hand.
+- The most basic example of encapsulation is a function. The caller of a function doesn't need to worry too much about what happens inside, they just need to understand the inputs and outputs.
+
+```python
+acceleration = calc_acceleration(initial_speed, final_speed, time)
+```
+- To use the `calc_acceleration` function, we don't need to think about every individual line of code inside the function. We just need to know that if we give it the inputs:
+	- `initial_speed`
+	- `final_speed`
+	- `time`
+- Then it will give us the correct `acceleration` as an output.
+- By default, all properties and methods in a class are _public_. That means that you can access them with the `.` operator:
+
+```python
+wall.height = 10
+print(wall.height)
+# 10
+```
+- [Private](https://docs.python.org/3/tutorial/classes.html#tut-private) data members are how we encapsulate logic and data within a class. To make a property or method private, you just need to prefix it with two underscores.
+
+```python
+class Wall:
+    def __init__(self, armor, magic_resistance):
+        self.__armor = armor
+        self.__magic_resistance = magic_resistance
+
+    def get_defense(self):
+        return self.__armor + self.__magic_resistance
+
+front_wall = Wall(10, 20)
+
+# This results in an error
+print(front_wall.__armor)
+
+# This works
+print(front_wall.get_defense())
+```
+- Encapsulation is the practice of hiding code complexity inside a ["black box"](https://en.wikipedia.org/wiki/Black_box) so that other developers working with the code don't have to worry about it.
+- To be clear, it does _not_ make the code more secure in a cryptographic or cyber-security sense. That's a point I was personally confused about when I was first learning about private and public class members.
+- **Encapsulation is about organization, not security.**
+- Encapsulation is like folders in an unlocked filing cabinet. They don't stop someone from peeking inside, but they do keep everything tidy and easy to find.
+### Encapsulation in Python
+- Python is a dynamic language, and that makes it difficult for the interpreter to enforce some of the safeguards that languages like [Go](https://go.dev/) do. That's why encapsulation in Python is achieved mostly by [convention](https://en.wikipedia.org/wiki/Coding_conventions) rather than by _force_.
+- Prefixing methods and properties with a double underscore is a _strong_ suggestion to the users of your class that they shouldn't be touching that stuff. If a developer wants to break convention, [there are ways to get around](https://stackoverflow.com/questions/3385317/private-variables-and-methods-in-python) the double underscore rule.
+
+```python
+class Wall:
+    def __init__(self, height):
+        # the double underscore make this a private property
+        # but it's not strictly enforced, there are hacks to get around it
+        self.__height = height
+
+    def get_height(self):
+        return self.__height
+```
+
+### Abstraction:
+- Abstraction helps us handle complexity by hiding unnecessary details. Sounds like encapsulation, right? They're so similar that it's almost not worth worrying about the difference...almost.
+- Abstraction vs encapsulation
+	- Abstraction is about _creating a simple interface for complex behavior._ It focuses on what's exposed.
+	- Encapsulation is about _hiding internal state._ It focuses on tucking implementation details away so no one depends on them.
+- Abstraction is more about reducing complexity, encapsulation is more about maintaining the integrity of system internals.
+- Are we encapsulating or abstracting?
+- Both. Almost always we are doing both. Here's an example of using the `random` library to generate a random number:
+
+```python 
+import random
+
+attack_damage = random.randrange(5)
+```
+- Abstraction is about reducing complexity. Creating good abstractions is particularly crucial when you're developing libraries for other developers to use. For example, the built-in `pow` function in Python is an abstraction that hides the complexity of calculating exponents.
+
+### OOP Thinking:
+- lasses in object-oriented programming are all about grouping data and behavior _together_ in one place: an _object_. Object-oriented programmers tend to think about programming as a modeling problem. They think:
+> "How can I write a `Human` class that holds the **data** and simulates the **behavior** of a real human?"
+- To provide some contrast, functional programmers tend to think of their code as inputs and outputs, and how those inputs and outputs transition the world from one state to the next:
+> "When a human takes a step, what's the new state of the game?"
+- OOP isn't the only pattern for organizing code, but it's one of the more popular ones. If you understand multiple ways of thinking about code, you'll be a much better developer overall.

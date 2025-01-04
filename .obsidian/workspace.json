@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9af8dd98a02194cb",
+        "id": "5c2438b7914e6936",
         "type": "tabs",
         "children": [
           {
-            "id": "814442a6f731367f",
+            "id": "b856ff0d419b92ad",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -87,7 +87,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -181,8 +182,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "814442a6f731367f",
+  "active": "b856ff0d419b92ad",
   "lastOpenFiles": [
+    "Research/FP/Semigroup.md",
+    "Research/crafting-interpreters/ch3.md",
+    "Research/crafting-interpreters/ch2.md",
+    "Research/crafting-interpreters/README.md",
     "dev/boot-dev-notes/Object Oriented Programming in Python.md",
     "dev/boot-dev-notes/Git - 1.md",
     "dev/boot-dev-notes/Shells and Terminals.md",
@@ -192,7 +197,6 @@
     "Papers/transformer/matrix-multiplication.md",
     "Papers/transformer/Attention is All You Need.md",
     "Papers/flash-attention",
-    "Research/FP/Semigroup.md",
     "Research/FP",
     "README.md",
     "Papers/transformer/Screenshot 2024-12-29 at 12.06.36 AM.png",
@@ -208,11 +212,9 @@
     "Papers/transformer",
     "Papers",
     "dev/boot-dev-notes/Untitled",
-    "Research/crafting-interpreters/ch3.md",
     "dev/backend-fundamentals/backend engineering.md",
     "dev/boot-dev-notes",
     "dev",
-    "Research/crafting-interpreters/ch2.md",
     "Research/rusty/ch1.md",
     "Research/rusty/README.md",
     "cs-fundamentals/operating-systems/lec2.md",
@@ -228,7 +230,6 @@
     "Research/AI_Research/project-aleph/Aleph Long Shot System Reservoir.md",
     "Research/AI_Research/project-aleph/Aleph Core Schema.md",
     "Research/project-ideas/franz.md",
-    "Research/crafting-interpreters/README.md",
     "Research/README.md",
     "notes-to-self/philosophy/basics of classic western philosophy.md"
   ]
