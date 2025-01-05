@@ -230,3 +230,181 @@ attack_damage = random.randrange(5)
 - To provide some contrast, functional programmers tend to think of their code as inputs and outputs, and how those inputs and outputs transition the world from one state to the next:
 > "When a human takes a step, what's the new state of the game?"
 - OOP isn't the only pattern for organizing code, but it's one of the more popular ones. If you understand multiple ways of thinking about code, you'll be a much better developer overall.
+### Inheritance:
+- [inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)). Non-OOP languages like Go and Rust allow for encapsulation and abstraction features as nearly _every_ language does. Inheritance, on the other hand, tends to be unique to class-based languages like Python, Java, and Ruby.
+- Inheritance allows one class, the "child" class, to _inherit_ the properties and methods of another class, the "parent" class.
+- This powerful language feature helps us avoid writing a lot of the same code twice. It allows us to [DRY (don't repeat yourself)](https://blog.boot.dev/clean-code/dry-code/) up our code.
+- Here `Cow` is a "child" class that inherits from the "parent" class `Animal`:
+
+```python
+class Animal:
+    # parent "Animal" class
+
+class Cow(Animal):
+    # child class "Cow" inherits "Animal"
+```
+- `Cow` class can reuse the `Animal` class's constructor with the [super()](https://docs.python.org/3/library/functions.html#super) method, `super()` allows the child class to call methods and constructors from its parent class, in this case, `__init__()`:
+
+```python
+class Animal:
+    def __init__(self, num_legs):
+        self.num_legs = num_legs
+
+class Cow(Animal):
+    def __init__(self, num_udders):
+        # call the parent constructor to give the cow some legs
+        super().__init__(4)
+
+        # set cow specific properties
+        self.num_udders = num_udders
+```
+- Inheritance is a powerful tool, but it is a _really_ bad idea to try to overuse it. Inheritance should only be used when all instances of a child class are also instances of the parent class.
+- When a child class inherits from a parent, it inherits _everything_. If you only want to share _some_ functionality, inheritance is probably not the best answer. Better to simply share some functions, or maybe make a new parent class that both classes can inherit from.
+- A good child class is a strict [subset](https://en.wikipedia.org/wiki/Subset) of its parent class.
+- An example of this with private properties. A child class cannot simply access a private property of its parent class. It has to use a getter.
+```python 
+class Wall:
+    def __init__(self, height):
+        self.__height = height
+
+    def get_height(self):
+        return self.__height
+
+class Castle(Wall):
+    def __init__(self, height, towers):
+        super().__init__(height)
+        self.towers = towers
+
+    def get_tower_height(self):
+        return self.get_height() * 2
+```
+
+### Multiple Children:
+- So far we've worked with linear class inheritance, but usually, inheritance hierarchies form trees, not lines. A parent class can have multiple children.
+### why inheritance trees wide instead of deep ?
+-  in good software a child class is a strict subset of its parent class. In a deep tree, that means the children need to be perfect members of all the parent class "types". That simply doesn't happen very often in the real world. It's much more likely that you'll have a base class that simply has many sibling classes that are slightly different variations of the base.
+### Polymorphism:
+- While inheritance is the most unique trait of object-oriented languages, polymorphism is probably the most powerful. Polymorphism is the ability of a variable, function or object to take on multiple forms.
+	- "poly"="many"
+	- "morph"="form".
+- For example, classes in the same hierarchical tree may have methods with the _same_ name but _different_ behaviors.
+- Different Forms
+- Let's look at a simple example.
+
+```python
+class Creature():
+    def move(self):
+        print("the creature moves")
+
+class Dragon(Creature):
+    def move(self):
+        print("the dragon flies")
+
+class Kraken(Creature):
+    def move(self):
+        print("the kraken swims")
+
+for creature in [Creature(), Dragon(), Kraken()]:
+    creature.move()
+# prints:
+# the creature moves
+# the dragon flies
+# the kraken swims
+```
+
+
+- The `Dragon` and `Kraken` child classes are **overriding** the behavior of their parent class's `move()` method.
+
+- Polymorphism in programming is the ability to present the same interface (function or method signatures) for many different underlying forms (data types).
+
+- A classic example is a `Shape` class that `Rectangle`, `Circle`, and `Triangle` can inherit from. With polymorphism, each of these classes will have different underlying data. The circle needs its center point coordinates and radius. The rectangle needs two coordinates for the top left and bottom right corners. The triangle needs coordinates for the corners.
+
+- By making each class responsible for its data **and** its code, you can achieve polymorphism. In the shapes example, each class would have its own `draw_shape()` method. This allows the code that uses the different shapes to be simple and easy, and more importantly, it can treat shapes as the **same** even though they are **different**. It hides the complexities of the difference behind a clean abstraction.
+- If you change the function signature of a parent class when overriding a method, it could be a disaster. The whole point of overriding a method is so that the caller of your code _doesn't have to worry_ about what different things are going on inside the methods of different object types.
+- Another kind of built-in polymorphism in Python is the ability to override how an operator works. For example, the `+` operator works for built-in types like integers and strings.
+```python
+print(3 + 4)
+# prints "7"
+
+print("three " + "four")
+# prints "three four"
+```
+- Custom classes on the other hand don't have any built-in support for those operators:
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+p1 = Point(4, 5)
+p2 = Point(2, 3)
+p3 = p1 + p2
+# TypeError: unsupported operand type(s) for +: 'Point' and 'Point'
+```
+-  If we create an `__add__(self, other)` method on our class, the Python interpreter will use it when instances of the class are being added with the `+` operator. Here's an example:
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, point):
+        x = self.x + point.x
+        y = self.y + point.y
+        return Point(x, y)
+
+p1 = Point(4, 5)
+p2 = Point(2, 3)
+p3 = p1 + p2
+# p3 is (6, 8)
+```
+- As we discussed in the last assignment, operator overloading is the practice of defining custom behavior for standard Python operators. Here's a list of how the operators translate into method names.
+
+|Operation|Operator|Method|
+|---|---|---|
+|Addition|+|__add__|
+|Subtraction|-|__sub__|
+|Multiplication|*|__mul__|
+|Power|**|__pow__|
+|Division|/|__truediv__|
+|Floor Division|//|__floordiv__|
+|Remainder (modulo)|%|__mod__|
+|Bitwise Left Shift|<<|__lshift__|
+|Bitwise Right Shift|>>|__rshift__|
+|Bitwise AND|&|__and__|
+|Bitwise OR|\||__or__|
+|Bitwise XOR|^|__xor__|
+|Bitwise NOT|~|__invert__|
+-  Overriding Built-in Methods
+
+- Last but not least, let's take a look at some of the built-in methods we can override in Python. While there isn't a default behavior for the arithmetic operators like we just saw, there _is_ a default behavior for **printing** a class.
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+p1 = Point(4, 5)
+print(p1)
+```
+- That's not super useful! Let's teach instances of our `Point` object to print themselves. The [`__str__`](https://docs.python.org/3/reference/datamodel.html#object.__str__) method (short for "string") lets us do just that. It takes no inputs but returns a string that will be printed to the console when someone passes an instance of the class to Python's `print()` function.
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"({self.x},{self.y})"
+
+p1 = Point(4, 5)
+print(p1)
+# prints "(4,5)"
+```
+- 
