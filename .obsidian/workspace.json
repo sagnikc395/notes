@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dev/boot-dev-notes/Functional Programming.md",
+                "file": "dev/ui-dev/svelte-basics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Functional Programming"
+              "title": "svelte-basics"
             }
           }
         ]
@@ -182,10 +182,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d680898ef741b3b8",
+  "active": "fad4a51925106b0a",
   "lastOpenFiles": [
-    "dev/boot-dev-notes/Algorithms.md",
+    "dev/ui-dev/README.md",
+    "dev/ui-dev/svelte-basics.md",
     "dev/boot-dev-notes/Functional Programming.md",
+    "dev/boot-dev-notes/Algorithms.md",
     "cs-fundamentals/Screenshot 2024-12-13 at 12.48.17 PM.png",
     "dev/ui-dev",
     "PL/FP/Semigroup.md",
@@ -217,8 +219,6 @@
     "PL/crafting-interpreters/ch3.md",
     "PL/crafting-interpreters/ch2.md",
     "PL/crafting-interpreters/README.md",
-    "AI/Papers/flash-attention/FlashAttention.md",
-    "AI/Papers/transformer/matrix-multiplication.md",
     "AI/Papers/flash-attention",
     "PL/FP",
     "AI/Papers/transformer/Screenshot 2024-12-29 at 12.06.36 AM.png",
