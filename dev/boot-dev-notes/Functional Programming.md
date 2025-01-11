@@ -4,7 +4,7 @@ tags:
   - functional-programming
   - python
 ---
-
+_Note: For completing this lecture, you might wanna first read through [[Python From Scratch]] and [[Object Oriented Programming in Python]]_
 ### what is functional programming ?
 - Functional programming is a style (or "paradigm" if you're pretentious) of programming where we compose functions instead of mutating state (updating the value of variables).
 
@@ -464,4 +464,233 @@ print(italic_formatter("Hello"))
 # *Hello*
 print(bullet_point_formatter("Hello"))
 # * Hello
+```
+
+### Closures:
+- A [closure](https://en.wikipedia.org/wiki/Closure_(computer_programming)) is a function that references variables from outside its own function body. The function definition _and its environment_ are bundled together into a single entity.
+- Put simply, a closure is just a function that **keeps track of some values** from the place where it was _defined_, no matter where it is executed later on.
+```python 
+def concatter():
+	doc = ""
+	def doc_builder(word):
+		# "nonlocal" tells Python to use the 'doc'
+		# variable from the enclosing scope
+		nonlocal doc
+		doc += word + " "
+		return doc
+	return doc_builder
+
+# save the returned 'doc_builder' function
+# to the new function 'harry_potter_aggregator'
+harry_potter_aggregator = concatter()
+harry_potter_aggregator("Mr.")
+harry_potter_aggregator("and")
+harry_potter_aggregator("Mrs.")
+harry_potter_aggregator("Dursley")
+harry_potter_aggregator("of")
+harry_potter_aggregator("number")
+harry_potter_aggregator("four,")
+harry_potter_aggregator("Privet")
+
+print(harry_potter_aggregator("Drive"))
+# Mr. and Mrs. Dursley of number four, Privet Drive
+```
+- Python has a keyword called [nonlocal](https://docs.python.org/3/reference/simple_stmts.html#nonlocal) that's required to modify a variable from an enclosing scope. Most programming languages don't require this keyword, but Python does.
+- The whole point of a closure is that it's _stateful_. It's a function that "remembers" the values from the enclosing scope even after the enclosing scope has finished executing.
+- It's as if you're saving the state of a function at a particular point in time, and then you can use and update that state later on.
+- When not to use the `nonlocal` keyword: when the variable is mutable (such as a list, dictionary or set), and you are modifying its contents rather than reassigning the variable. You only need the `nonlocal` keyword if you are reassigning a variable instead of modifying its contents (which you must do to change immutable values such as strings and integers).
+### Currying:
+- Function [currying](https://en.wikipedia.org/wiki/Currying) is a specific _kind_ of function transformation where we translate a single function that accepts multiple arguments into _multiple_ functions that each accept a _single_ argument.
+```python 
+def sum(a):
+  def inner_sum(b):
+    return a + b
+  return inner_sum
+
+print(sum(1)(2))
+# prints 3
+```
+- The `sum` function only takes a _single_ input, `a`. It returns a _new_ function that takes a single input, `b`. This new function when called with a value for `b` will return the sum of `a` and `b`. _We'll talk later about why this is useful._
+### Why Curry ?
+- Well, currying is often used to **change a function's signature** to make it conform to a specific shape. For example:
+```python
+def colorize(converter, doc):
+  # ...
+  converter(doc)
+  # ...
+```
+- `colorize` function accepts a function called `converter` as input, and at some point during its execution, it calls `converter` with a single argument. That means that it expects `converter` to accept exactly one argument. So, if I have a conversion function like this:
+```python
+def markdown_to_html(doc, asterisk_style):
+  # ...
+```
+- I can't pass `markdown_to_html` to `colorize` because `markdown_to_html` wants _two_ arguments. To solve this problem, I can curry `markdown_to_html` into a function that takes a single argument:
+```python
+def markdown_to_html(asterisk_style):
+  def asterisk_md_to_html(doc):
+    # do stuff with doc and asterisk_style...
+
+  return asterisk_md_to_html
+
+markdown_to_html_italic = markdown_to_html('italic')
+colorize(markdown_to_html_italic, doc)
+```
+
+### Decorators:
+- [Python decorators](https://book.pythontips.com/en/latest/decorators.html) are just [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) for [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function).
+```python 
+def vowel_counter(func_to_decorate):
+    vowel_count = 0
+    def wrapper(doc):
+        nonlocal vowel_count
+        vowels = "aeiou"
+        for char in doc:
+            if char in vowels:
+                vowel_count += 1
+        print(f"Vowel count: {vowel_count}")
+        return func_to_decorate(doc)
+    return wrapper
+
+@vowel_counter
+def process_doc(doc):
+    print(f"Document: {doc}")
+
+process_doc("What")
+# Vowel count: 1
+# Document: What
+
+process_doc("a wonderful")
+# Vowel count: 5
+# Document: a wonderful
+
+process_doc("world")
+# Vowel count: 6
+# Document: world
+```
+- `@vowel_counter` line is "decorating" the `process_doc` function with the `vowel_counter` function. `vowel_counter` is called once when `process_doc` is defined with the `@` syntax, but the `wrapper` function that it returns is called every time `process_doc` is called. That's why `vowel_count` is preserved and printed after each time.
+- Python decorators are just another (sometimes simpler) way of writing a higher-order function. These two pieces of code are _identical_:
+- With Decorator
+
+```python
+@vowel_counter
+def process_doc(doc):
+    print(f"Document: {doc}")
+
+process_doc("Something wicked this way comes")
+```
+- Without decorator
+```python 
+def process(doc):
+    print(f"Document: {doc}")
+
+process_doc = vowel_counter(process)
+process_doc("Something wicked this way comes")
+```
+
+### Args and Kwargs:
+- In Python, [`*args` and `**kwargs`](https://book.pythontips.com/en/latest/args_and_kwargs.html) allow a function to accept and deal with a _variable_ number of arguments.
+	- `*args` collects positional arguments into a _tuple_
+	- `**kwargs` collects keyword (named) arguments into a _dictionary_
+
+```python
+def print_arguments(*args, **kwargs):
+    print(f"Positional arguments: {args}")
+    print(f"Keyword arguments: {kwargs}")
+
+print_arguments("hello", "world", a=1, b=2)
+# Positional arguments: ('hello', 'world')
+# Keyword arguments: {'a': 1, 'b': 2}
+```
+- Positional arguments are the ones you're already familiar with, where the order of the arguments matters. Like this:
+
+```python
+def sub(a, b):
+    return a - b
+
+# a=3, b=2
+res = sub(3, 2)
+# res = 1
+```
+- [Keyword arguments](https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments) are passed in by name. _Order does not matter_. Like this:
+
+```python
+def sub(a, b):
+    return a - b
+
+res = sub(b=3, a=2)
+# res = -1
+res = sub(a=3, b=2)
+# res = 1
+```
+- Any positional arguments _must come before_ keyword arguments. This will _not_ work:
+
+```python
+sub(b=3, 2)
+```
+
+```python
+def args_logger(*args, **kwargs):
+    # ?
+    counter = 1 
+    for args in args:
+        print(f"{counter}. {args}")
+        counter += 1 
+    for key in sorted(kwargs.keys()):
+        print(f"* {key}: {kwargs[key]}")
+```
+- The `*args` and `**kwargs` syntax is great for decorators that are intended to work on functions with different [signatures](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function).
+- The `log_call_count` function below doesn't care about the number or type of the decorated function's (`func_to_decorate`) arguments. It just wants to count how many times the function is called. However, it still needs to pass any arguments through to the wrapped function.
+```python
+def log_call_count(func_to_decorate):
+    count = 0
+
+    def wrapper(*args, **kwargs):
+        nonlocal count
+        count += 1
+        print(f"Called {count} times")
+        # The * and ** syntax unpacks the arguments
+        # and passes them to the decorated function
+        return func_to_decorate(*args, **kwargs)
+    return wrapper
+```
+### Enums:
+- Doing the admittedly weird `class` and `isinstance()` thing works, but it turns out, there's a better way in some cases. If you're trying to represent a fixed set of values (but not store additional data within them) [enums](https://docs.python.org/3/library/enum.html) are the way to go.
+```python 
+from enum import Enum
+
+Color = Enum('Color', ['RED', 'GREEN', 'BLUE'])
+print(Color.RED)  # this works, prints 'Color.RED'
+print(Color.TEAL) # this raises an exception
+```
+- Unfortunately, Python does _not_ support sum types as well as some of the other [statically typed](https://developer.mozilla.org/en-US/docs/Glossary/Static_typing) languages.
+- Python [does not enforce](https://docs.python.org/3/library/typing.html) your types before your code runs. That's why we need this line here to `raise` an `Exception` if a color is invalid:
+```python
+def color_to_hex(color):
+    if color == Color.GREEN:
+        return '#00FF00'
+    elif color == Color.BLUE:
+        return '#0000FF'
+    elif color == Color.RED:
+        return '#FF0000'
+    # handle the case where the color is invalid
+    raise Exception('Unknown color')
+```
+
+### Match stmt:
+- Python has a `match` statement that tends to be a lot cleaner than a series of `if/else/elif` statements when we're working with a fixed set of possible values (like a sum type, or more specifically an enum):
+
+```python
+def get_hex(color):
+    match color:
+        case Color.RED:
+            return "#FF0000"
+        case Color.GREEN:
+            return "#00FF00"
+        case Color.BLUE:
+            return "#0000FF"
+
+        # default case
+        # (invalid Color)
+        case _:
+            return "#FFFFFF"
 ```

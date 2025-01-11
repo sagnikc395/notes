@@ -7,6 +7,7 @@ tags:
   - basic-programming
 date: 3/1/25
 ---
+_Note: For reading through this lecture, first go through : [[Python From Scratch]]_
 ### OOP:
 - [Object-Oriented Programming](https://en.wikipedia.org/wiki/Object-oriented_programming), or "OOP", is a pattern for writing clean and maintainable code. Not everyone _agrees_ that object-oriented principles are the best way to write code, but, to be a good engineer, you should at least understand them.
 ### Clean Code:
