@@ -87,7 +87,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -183,6 +184,11 @@
   },
   "active": "d680898ef741b3b8",
   "lastOpenFiles": [
+    "dev/boot-dev-notes/img/Screenshot 2025-01-14 at 12.35.21 PM.png",
+    "dev/boot-dev-notes/img/Screenshot 2025-01-14 at 12.27.48 PM.png",
+    "dev/boot-dev-notes/img/Screenshot 2025-01-14 at 12.27.17 PM.png",
+    "dev/boot-dev-notes/img",
+    "dev/boot-dev-notes/img/Screenshot 2025-01-14 at 12.26.45 PM.png",
     "dev/boot-dev-notes/Algorithms-2.md",
     "dev/boot-dev-notes/Data Structures.md",
     "dev/boot-dev-notes/Algorithms.md",
@@ -218,8 +224,6 @@
     "Research/Untitled",
     "AI/Deep-Learning-Notes",
     "AI",
-    "dev/boot-dev-notes/Python From Scratch.md",
-    "AI/Papers/flash-attention",
     "AI/Papers/transformer/Screenshot 2024-12-29 at 12.06.36 AM.png",
     "AI/Papers/transformer/Screenshot 2024-12-29 at 12.08.15 AM.png",
     "AI/Papers/transformer/Screenshot 2024-12-28 at 11.55.14 PM.png",
@@ -227,9 +231,6 @@
     "Papers/transformer/Untitled.canvas",
     "AI/Papers/transformer/Screenshot 2024-12-28 at 10.42.40 PM.png",
     "AI/Papers/transformer/Screenshot 2024-12-28 at 10.36.42 PM.png",
-    "AI/Papers/transformer/Screenshot 2024-12-28 at 10.26.51 PM.png",
-    "Untitled.canvas",
-    "cs-fundamentals/operating-systems/Screenshot 2024-12-28 at 3.08.44 PM.png",
-    "cs-fundamentals/operating-systems/Screenshot 2024-12-28 at 3.07.26 PM.png"
+    "Untitled.canvas"
   ]
 }

@@ -371,3 +371,279 @@ struct Point {
 #endif
 ```
 - This method works by defining a unique [macro](https://gcc.gnu.org/onlinedocs/cpp/Macros.html) for the header file. If it’s already been included, the guard prevents it from being processed again.
+### struct:
+- _[Structs](https://en.cppreference.com/w/c/language/struct) solve this._ Here's an example of the syntax:
+
+```c
+struct Human {
+    int age;
+    char *name;
+    int is_alive;
+};
+```
+- Unfortunately, there are a few different ways to [initialize a struct](https://en.cppreference.com/w/c/language/struct_initialization), I'll give you an example of each using this struct:
+
+```c
+struct City {
+  char *name;
+  int lat;
+  int lon;
+};
+```
+- Zero struct:
+```c
+int main() {
+  struct City c = {0};
+}
+```
+- Positional Initializer:
+```c
+int main() {
+  struct City c = {"San Francisco", 37, -122};
+}
+```
+- Designated Initializer:
+	- It's easier to read (has the field names)
+	- If the fields change, you don't have to worry about breaking the ordering
+
+```c
+int main() {
+  struct City c = {
+    .name = "San Francisco",
+    .lat = 37,
+    .lon = -122
+  };
+}
+```
+
+- Accessing a field in a struct is done using the `.` operator.
+```c
+struct City c;
+c.lat = 41; // Set the latitude
+printf("Latitude: %d", c.lat); // Print the latitude
+```
+
+- Remember how we can **not** return multiple values from a function in C? However, we _can_ accomplish effectively the same thing by returning a `struct`:
+
+```c
+struct Human become_older(int age, char *name) {
+  struct Human h = {.age = age, .name = name};
+  h.age++;
+  return h;
+}
+```
+- Eg:
+```c
+
+#include "coord.h"
+
+struct Coordinate new_coord(int x, int y, int z) {
+  struct Coordinate coord = {.x = x, .y = y, .z = z};
+  return coord;
+}
+
+struct Coordinate scale_coordinate(struct Coordinate coord, int factor) {
+  // ?
+  struct Coordinate sc = {coord.x = coord.x*factor, 
+  coord.y = coord.y*factor, 
+  coord.z = coord.z*factor};
+  return sc;
+}
+```
+
+### Typedef:
+- you're probably tired of typing `struct Coordinate` over and over again, and you're wondering "How can I make my struct types easier to write, like `int`?"
+- Good news! C can do this with the [`typedef` keyword](https://en.cppreference.com/w/c/language/typedef).
+
+```c
+struct Pastry {
+    char *name;
+    float weight;
+};
+```
+- This can also be written as:
+```c
+typedef struct Pastry {
+    char *name;
+    float weight;
+} pastry_t;
+```
+- Now, you can use `pastry_t` wherever before you would have used `struct Pastry`. _Note: The `_t` at the end is a common convention to indicate a type._
+- In fact, you can optionally skip giving the struct a name:
+
+```c
+typedef struct {
+    char *name;
+    float weight;
+} pastry_t;
+```
+- In this case you'd only be able to refer to the type as `pastry_t`. In general, I _do_ give the struct an actual name (e.g. `Pastry`), but I only use the `typedef`'d type. _We'll be using this convention in this course._
+- using typedef to define types:
+```c
+// coord.h
+#pragma once
+
+typedef struct Coordinate {
+  int x;
+  int y;
+  int z;
+} coordinate_t;
+
+coordinate_t new_coord(int x, int y, int z);
+coordinate_t scale_coordinate(coordinate_t coord, int factor);
+
+//coord.c
+#include "coord.h"
+
+coordinate_t new_coord(int x, int y, int z) {
+   coordinate_t coord = {.x = x, .y = y, .z = z};
+
+  return coord;
+}
+
+coordinate_t scale_coordinate(coordinate_t coord, int factor) {
+  coordinate_t p = {coord.x *= factor, coord.y *= factor, coord.z *= factor};
+  return p;
+}
+```
+
+### sizeof:
+- As we saw earlier, [`sizeof`](https://en.cppreference.com/w/c/language/sizeof) can be used to view the size of a type (for once, programmers thought of a name that was actually helpful). But this isn't just true of builtin types like `int` or `float`, you can also use it to find out the size of `struct`s!
+
+```c
+printf("Size of coordinate_t: %zu bytes\n", sizeof(coordinate_t));
+```
+- Structs are stored contiguously in memory one field after another.
+
+- Mixed type structs:
+```c
+typedef struct Human{
+    char first_inital;
+    int age;
+    double height;
+} human_t;
+```
+- **Wait**! What is that `padding` doing here?
+
+- It turns out that CPUs don't like accessing data that isn't [aligned](https://en.wikipedia.org/wiki/Data_structure_alignment) (incredible oversimplification alert, since obviously CPUs don't have feelings (yet)), so C inserts padding to maintain alignment (e.g. every 4 bytes in this example).
+### struct padding:
+- There are a bunch of complicated rules and heuristics that different compilers use to determine how to lay out your structs. But to oversimplify:
+	1. The fields of a struct are laid out in memory contiguously (next to each other)
+	2. Structs can vary in size depending on how they are laid out.
+- C is a language that aims to give tight control over memory, so the fact that you can control the layout of your structs is a feature, not a bug.
+- Compilers + modern hardware + optimizations + skill issues means that sometimes what you _think_ the computer is going to do isn't exactly what it actually _does_. That said, C is designed to get you close to the machine and allows you to dig in and figure out what's going on if you want to for a specific compiler or architecture.
+- As a _rule of thumb_, ordering your fields from largest to smallest will help the compiler minimize padding:
+```c
+typedef struct {
+  char a;
+  double b;
+  char c;
+  char d;
+  long e;
+  char f;
+} poorly_aligned_t;
+
+typedef struct {
+  double b;
+  long e;
+  char a;
+  char c;
+  char d;
+  char f;
+} better_t;
+```
+![[Screenshot 2025-01-14 at 12.27.17 PM.png]]
+
+![[Screenshot 2025-01-14 at 12.27.48 PM.png]]
+
+### Memory:
+- Before we talk about pointers, we should talk about variables and memory in general. Here are some useful (albeit hand-wavy) mental models:
+
+> Variables are human readable names that refer to some data in memory.
+
+> Memory is a big array of bytes, and data is stored in the array.![[Screenshot 2025-01-14 at 12.26.45 PM.png]]
+
+- A variable is a human readable name that refers to an address in memory, which is an index into the big array of bytes. Here's a diagram:
+
+- In C, you can print the address of a variable by using the address-of-operator: `&`. Here's an example:
+
+```c
+#include <stdio.h>
+
+int main() {
+  int age = 37;
+  printf("The address of age is: %p\n", &age);
+  return 0;
+}
+
+// The address of age is: 0xfff8
+```
+
+
+- _Note: The [`%p` format specifier](https://en.cppreference.com/w/c/io/fprintf#:~:text=The%20following%20format%20specifiers%20are%20available%3A) will format a pointer (memory address) to be printed._
+
+### What is an Address ?
+- So I mentioned in the last lesson that memory can be thought of as a big array of bytes, and each byte has an address.
+- That's true, and the beauty is that each address is _literally just a number_. It's not some _mortal_ address like "1234 Elm St." or "1600 Pennsylvania Ave." It's **just a number**.
+- You might be thinking, "Hey, if it's just a number, why does it look all disgusting like `0xfff8`?"
+- That's because `0xfff8` _is_ just a number. But:
+	1. It's written in [`hexadecimal`](https://www.wikipedia.org/wiki/Hexadecimal) (base 16) instead of decimal (base 10).
+	2. It's a pretty big number, so it's not very human readable. `0xfff8` is the same as `65,528` in decimal.
+
+
+### Virtual Address:
+- your code probably doesn't have direct access to the physical RAM in your computer.
+
+- Instead, your operating system provides a layer of abstraction called **virtual memory**. Virtual memory makes it seem like your program has direct access to all the memory on the machine, even if it doesn't.
+	- **Physical Memory**: The actual RAM sticks in your computer.
+	- **Operating System**: The software that manages access to the physical memory.
+	- **Your Program**: When it runs, it becomes a [`process`](https://en.wikipedia.org/wiki/Process_(computing)) and is given access to a chunk of virtual memory by the operating system.
+	- **Virtual Memory**: This abstracted chunk of memory that your program can use.
+- ![[Screenshot 2025-01-14 at 12.35.21 PM.png]]
+- By only giving processes access to a chunk of virtual memory, the operating system can do some cool things:
+	1. **Isolation**: One process can't access the memory of another process.
+	2. **Security**: The operating system can prevent processes from accessing certain parts of memory.
+	3. **Simplicity**: Developers don't have to worry about managing physical memory and the memory of other processes.
+	4. **Performance**: The operating system can optimize memory access depending on the hardware and needs of the program. For example, by moving data between physical memory and the hard drive.
+- At the end of the day, your program has direct access to a virtual chunk of memory.
+### Pointers:
+- Now that you understand how memory is laid out in an array, a lot of the mystery behind pointers should be gone. Put simply: **a pointer is just a variable that stores a memory address**. It's called a pointer, because it "points" to the address of a variable, which stores the actual data held in that variable.
+- A pointer is declared with an asterisk (`*`) after the type. For example, `int *`.
+
+```c
+int age = 37;
+int *pointer_to_age = &age;
+```
+- To get the address of a variable so that we can store it _in_ a pointer variable, we can use the address-of operator (`&`).
+- Why of Pointers ?
+	- To illustrate the usefulness of pointers, let's pretend we want to pass a collection of data into a function. Within that function, we want to modify the data. In Python, we could use a class to store the data, and pass an instance of that class into the function:
+		- You'll notice that `coordinate_update_x` doesn't update anything, but `coordinate_update_and_return_x` does because it returns a new copy of the struct.
+		- In C, structs are passed by _value_. That's why updating a field in the struct does _not_ change the original struct from the `main` function.
+		- To get the change to "persist", we needed to return the updated struct from the function (a new copy).
+		- The memory address of the struct that went _in_ to `coordinate_update_and_return_x` was not the same as the address of the struct that was returned. Again, because we created a copy.
+- Declare a pointer to an integer:
+
+```c
+int *pointer_to_something; 
+```
+- Get the address of a variable:
+
+```c
+int meaning_of_life = 42;
+int *pointer_to_mol = &meaning_of_life;
+// pointer_to_mol now holds the address of meaning_of_life
+```
+- Dereferencing Pointers:
+- Oftentimes we have a pointer, but we want to get access to the data that it points to. Not the address itself, but the value stored at _that_ address.
+- We can use an asterisk (`*`) to do it. The `*` operator dereferences a pointer.
+
+```c
+int meaning_of_life = 42;
+int *pointer_to_mol = &meaning_of_life;
+int value_at_pointer = *pointer_to_mol;
+// value_at_pointer = 42
+```
+- _It can be a touch confusing, but remember that the asterisk symbol is used for two different things:_
+	1. Declaring a pointer type: `int *pointer_to_thing;`
+	2. Dereferencing a pointer value: `*pointer_to_thing = 20;`
+- 
