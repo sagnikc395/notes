@@ -564,5 +564,88 @@ export async function roll() {
 {/await}
 ```
 
-### DOM events:
+
+
+## Events:
+
+### DOM Events:
+- We can listen to any DOM event on an element (such as click or pointermove) with an `on<name>` function.
+```svelte 
+<div onpointermove={onpointermove}>
+	The pointer is at {Math.random(m.x)} x {Math.random(m.y)}
+</div>
+```
+- Like with any other property where the name matches the value, we can also use the short form:
+```svelte 
+<div {onpointermove}>
+	The pointer is at {Math.random(m.x)} x {Math.random(m.y)}
+</div>
+```
+
+```svelte 
+<script>
+	let m = $state({ x: 0, y: 0 });
+
+	function onpointermove(event) {
+		m.x = event.clientX;
+		m.y = event.clientY;
+	}
+</script>
+
+<div onpointerdown={onpointermove}>
+	The pointer is at {Math.round(m.x)} x {Math.round(m.y)}
+</div>
+
+<style>
+	div {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		padding: 1rem;
+	}
+</style>
+```
+
+### Inline Handlers:
+- We can also declare event handlers inline:
+```svelte 
+<script lang="ts">
+	let m = $state{{
+	x:0,y:0}};
+	const onpointermove = (event) => {
+		m.x = event.clientX;
+		m.y = event.clientY;
+	}
+</script>
+<div 
+onpointermove={(event) => {
+m.x = event.clientX;
+m.y = event.clientY;
+}}>
+The pointer is at {m.x} x {m.y}
+</div>
+```
+
+### Capturing:
+- Event handlers run normally during the [event bubbling](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) phase.
+- When we type something into the `<input>` in example - the inner handler runs first, as the event 'bubbles' from the target up to the document, followed by the outer handler.
+- Sometimes , we want handlers to run during the capture phase instead. For this we add capture to the end of the event name.
+```svelte
+<div onkeydowncapture={(e) => alert(`<div> ${e.key}`)} role="presentation">
+	<input onkeydowncapture={(e) => alert(`<input> ${e.key}`)} />
+</div>
+```
+
+- Her the relative order is reversed. If both capturing and non-capturing handlers exist for a given event, the capturing handlers will run first.
+
+### Component Events:
+- We can pass event handlers to components like any other prop. In:
+```svelte 
+<!-- Stepper.svelte -->
+<script lang="ts">
+	let {increment,decrement} = $props();
+</script>
+```
 - 
