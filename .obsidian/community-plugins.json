@@ -4,5 +4,7 @@
   "longform",
   "obsidian-tasks-plugin",
   "obsidian-excalidraw-plugin",
-  "obsidian-git"
+  "obsidian-git",
+  "code-styler",
+  "svelte-syntax-highlighter"
 ]
