@@ -2,7 +2,7 @@
 title: Introduction and Basics of Computer Architecture
 tags:
   - computer-architecture
-  - digitial-design
+  - digital-design
 date: 13/12/24
 ---
 - Four key current directions of computer architecture and SAFARI Research Group:
@@ -158,4 +158,8 @@ date: 13/12/24
 - Security and Privacy 
 - More demanding workloads
 - New(device) technologies.
-
+	- building accelerators
+	- like Apple M1 
+	- Youtube Video Coding Unit.
+	- Tesla Full Driving Chip.
+- 

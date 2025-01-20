@@ -5,3 +5,4 @@ My notes and stuff while learning Sveltekit and TailwindCSS to make basic person
 ### Index:
 
 1. [[svelte-basics]] Covers the Basics of Svelte.
+2. [[learn-tailwind]] Covers TailwindCSS and stuff.

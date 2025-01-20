@@ -3,6 +3,7 @@ title: Svelte Basics
 tags:
   - frontend
   - svelte
+  - ui
 date: 10/1/25
 ---
 ## What is Svelte ?
