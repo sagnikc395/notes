@@ -105,4 +105,57 @@ date: 13/12/24
 
 - Designing a supercomputer is different from designing a smartphone -> But, many fundamentals principles are similar.
 
-- 
+- Differnet platforms , different goals, -> ML Accelerator Chip, 850k cores.
+
+### Axiom:
+- To achieve the highest enery efficiency and performance , we must take the expanded view of the computer architecture.
+- Co-design/cross design across the hierarchy -> Algorithms to devices.
+- Specialize as much as possible -> within the design goals.
+
+### Formal Defn of Computer Architecture:
+- The science and art of designing,selecting and interconnecting hardware components and designing the hardware/software interface to create a computing system that meets functional, performance,energy consumption,cost and other specific goals.
+
+### Why study Computer Architecture :
+
+- Enable better systems -> make computers faster, cheaper,smaller and more flexible.
+	- By exploiting advances and changes in underlying tech/circuits.
+- Enable new applications
+	- Life like 3D visualization 20 years ago ? Virtual realiy ?
+	- Self-driving cars ?
+	- Personalized genomics ? Personalized medicine ?
+
+- Enable better solutions to problems
+	- Software innovation is built on trends and changes in computer architecture.
+		- \> 50% performance improvement per year has enable this innovation.
+
+- Understand why computers work the way they do.
+
+### Computer Architecture Today 
+- Today is a very exciting time to study computer architecture.
+- Industry is in a large paradigm shift (to novel architectures)
+	- many different potential system designs possible.
+	- Every component and its interaces, as well as entire architecture is being re-imagined.
+
+- Many difficult problems motivating and caused by the shift:
+	- Huge power for data and new data-intensive applications.
+	- Power/energy/thermal constraints
+	- Complexity of design 
+	- Difficulties in tech scaling
+	- Memory bottleneck
+	- Reliability problems
+	- Programmability problems.
+	- Security and privacy issues.
+
+### Innovations can be driven by hierarchy, plenty of oppurtunities at the bottom. i.e physics. Plenty of room where we can build devices and can directly enable us to manipulate fundamental atoms at the direct level.
+
+- Rather there is plenty of room at the top and at the bottom but much more so when we communicate well between and optimize across the top and the bottom.
+
+### Many Intersting things are happening today in computer architecture.
+
+- Performance, Energy Efficiency, Sustanibility
+- Reliability 
+- Safety
+- Security and Privacy 
+- More demanding workloads
+- New(device) technologies.
+
