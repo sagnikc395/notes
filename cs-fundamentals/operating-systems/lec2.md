@@ -31,7 +31,7 @@ date: 28/12/24
 	- **Memory**: RAM containing data and programs used by the CPU.
 	- **System Bus**: Communication medium between CPU,Memory and peripherals. How the CPU will fetch instructions from the memory.
 
-### What the OS can do is dictated in part by the architecture
-### Architectural support can greatly simplify or complicate the OS
+### What the OS can do is dictated in part by the architecture and Architectural support can greatly simplify or complicate the OS
+
 
 
