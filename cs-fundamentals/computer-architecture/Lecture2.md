@@ -120,7 +120,6 @@ date: 21/1/25
         - Multi-core caches 
         - Prefetching 
         - Virtual Memory 
-
 - Processing Paradigms covered in the course:
     - Pipelining
     - Out-of-order execution 
@@ -135,15 +134,10 @@ date: 21/1/25
 ### Fundamental Ideas :
 
 - Transistors and Logic Gates.
-
 - Boolean Algebra 
-
 - Combinational Logic Circuits 
-
 - How to use boolean algebra to represent combinational circuits 
-
 - Minimizing Logic Circuits 
-
 - General Purpose vs Special Purpose Systems 
     ![alt text](image-6.png)
     - CPUs are more flexible and can execute any program , Easy to program and use. Cons:  Not the best performance and efficiency.
@@ -153,4 +147,44 @@ date: 21/1/25
 ![alt text](image-7.png)
 
 - So by programming the FPGAs we build the microprocessors.
-- 
+
+### Transistors:
+- Computers are built from very large numbers of very small(and relatively simple) structures: transistors
+	- Intel 4004, in 1971 had 2300 MOS transistors.
+	- Intel's Pentium 4 microprocessor , 2000, was made up of more than 42 million MOS transistors 
+	- Apple's M2 Max , offered for sale in 2022, is made up of more than 67 Billion MOS transistors.
+
+### MOS Transistor
+- By combining:
+	- Conductors (Metal)
+	- Insulators (Oxide)
+	- Semiconductors 
+- We get a Transistor(MOS)
+- Why useful?
+	- we can combine many of these to realize simple logic gates.
+- The electrical properties of metal-oxide semiconductors are well beyond the scope of what we want to understand in this course.
+	- They are below our lowest level of abstraction.
+
+### Different Types of MOS Transistors:
+- n-type and p-type.
+- ![[Screenshot 2025-01-21 at 11.02.30 PM.png]]
+- They both operate "logically".
+
+### How does a Transistor Work ?
+- ![[Screenshot 2025-01-21 at 11.05.59 PM.png]]
+- In order for the lamp to glow, electrons must flow.
+- In order for the electrons to flow, there must be a closed circuit from the power supply to the lamp and back to the power supply.
+- The lamp can be turned on and off by simply manipulating the wall switch to make or break the closed circuit.
+- Instead of the wall switch, we could use an n-type or a p-type MOS transistor to make or break the closed circuit.
+- ![[Screenshot 2025-01-21 at 11.07.56 PM.png]]
+- Depending on the technology, high voltage can range from 0.3V to 3V -> threshold voltage.
+- If the gate of the n-type transistor is supplied with 0 voltage, the connection between the source and drain is broken.(i.e the circuit is open)
+- ![[Screenshot 2025-01-21 at 11.10.34 PM.png]]
+- In n-type we take advantage of the electron flow, while in p-type transistor we take advantage of the hole flow.
+
+### Making logic blocks using CMOS Technology
+- Modern computers use both n-type and p-type transistors i.e Complementary MOS (CMOS) technology.
+- It is the simplest logic structure that exists in a modern computer.
+- ![[Screenshot 2025-01-21 at 11.24.43 PM.png]]
+- ![[Screenshot 2025-01-21 at 11.25.05 PM.png]]
+- ![[Screenshot 2025-01-21 at 11.25.55 PM.png]]
