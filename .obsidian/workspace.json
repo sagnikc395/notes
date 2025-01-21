@@ -11,14 +11,12 @@
             "id": "ce17ccb66739d55e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "cs-fundamentals/computer-networks/CN-Introduction.md",
-                "mode": "source",
-                "source": false
+                "file": "cs-fundamentals/Screenshot 2024-12-13 at 12.48.17 PM.png"
               },
-              "icon": "lucide-file",
-              "title": "CN-Introduction"
+              "icon": "lucide-image",
+              "title": "Screenshot 2024-12-13 at 12.48.17 PM"
             }
           }
         ]
@@ -184,10 +182,10 @@
   },
   "active": "ce17ccb66739d55e",
   "lastOpenFiles": [
-    "cs-fundamentals/computer-networks/CN-Notes.md",
     "cs-fundamentals/computer-networks/CN-Introduction.md",
+    "cs-fundamentals/computer-networks/CN-Notes.md",
     "cs-fundamentals/computer-architecture/Lecture2.md",
-    "Screenshot 2025-01-21 at 11.25.55 PM.png",
+    "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.25.55 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.25.05 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.24.43 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.10.34 PM.png",
