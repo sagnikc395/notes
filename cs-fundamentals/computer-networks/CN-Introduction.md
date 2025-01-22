@@ -12,4 +12,10 @@ date: 21/1/25
 	- Without centralized control and with unreliable components 
 - Explore several layers:
 	- Applications (web,email,DNS etc.)
-	- 
+	- Encryption(TLS/SSL)
+	- Reliable Communication(TCP)
+	- Routing (IP) and Network Protocol(BGP)
+	- Physical connections(Ehernet, Wifi,Cellular)
+
+- Internet principles also apply to other networks and engineered systems in general.
+
