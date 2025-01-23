@@ -159,4 +159,21 @@ let absent_number: Option<i32> = None;
 
 ### Concise Control Flow with if let 
 
-- 
+- if let syntax lets us combine if and let into a less verbose way to handle values that match 1 pattern while ignoring the rest.
+```rust 
+let config_max = Some(3u8);
+match config_max {
+    Some(max) => println!("The maximum is configured to be {max}");
+    _ => (),
+}
+```
+- If the value is Some, we print out the value in the Some variant by binding the value to the variable max in the pattern. We don't wan to do anything with the None value. To satisfy the match expression, we have to add _ => () , after processing just one variant.
+
+- Instead we can shorten this to if let 
+
+```rust 
+let config_max = Some(3u8);
+if let Some(max) = config_max {
+    println!("The maximum is configured to be {max}");
+}
+```
