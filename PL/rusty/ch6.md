@@ -177,3 +177,9 @@ if let Some(max) = config_max {
     println!("The maximum is configured to be {max}");
 }
 ```
+
+- if let takes a pattern and an expression seperated by equal sign. It works the same way as a match, where the expression is given to the match and the pattern.
+ 
+- In other words, you can think of if let as syntax sugar for a match that runs code when the value matches one pattern and then ignores all other values.
+
+- We can include an else with an if let. The block of code that goes with the else is the same as the block of code that would go with the _ case in the match expression that is equivalent to the if let and else
