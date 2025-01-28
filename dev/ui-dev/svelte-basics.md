@@ -649,4 +649,188 @@ The pointer is at {m.x} x {m.y}
 	let {increment,decrement} = $props();
 </script>
 ```
-- 
+- In `App.svelte` , define the handlers:
+```svelte 
+<Stepper 
+	increment={() => value += 1}
+	decrement={() => value -= 1}
+/>
+```
+- we can also spread the event handlers directly onto elements. Here , we have defined an onclick handler in `App.svelte` - all we need to do is pass the props to the `<button>`
+in `BigRedButton.svelte`
+
+### Bindings:
+
+#### Text Inputs:
+- Data flow in Svelte is top down - a parent component can set props on a child component, and a component can set attributes on an element, but not the other way round.
+
+- Take the case of the `<input>` element in this component - we could add an oninput event handler that sets the value of `name` to `event.target.value` -> boilerplatey.
+
+- Instead we can use the `bind:value` directive:
+	```svelte 
+	<input bind:value={name}>
+
+	```
+- not only will it change to the value of name update the input value, but changes to the input value will update name.
+
+#### Numeric Inputs:
+- In DOM, every input value is a string. Very unhelpful when we are dealing with numeric inputs - type="number" etc. - i.e we have to coerce `input.value` before using it.
+
+- bind:value in svelte takes care for it automatically.
+```svelte 
+<label>	
+	<input type="number" bind:value={a} min="0" max="10">
+	<input type="number" bind:value={a} min="0" max="10">
+</label>
+```
+
+#### Checkbox Inputs:
+- Checkboxes used for toggling bw states. Instead of binding to `input.value`, we bind to `input.checked`.
+```svelte 
+<input type="checkbox" bind:checked={yes}>
+```
+
+```svelte
+<script>
+	let yes = $state(false);
+</script>
+
+<label>
+	<input type="checkbox" bind:checked={yes} />
+	Yes! Send me regular email spam
+</label>
+
+{#if yes}
+	<p>
+		Thank you. We will bombard your inbox and sell
+		your personal details.
+	</p>
+{:else}
+	<p>
+		You must opt in to continue. If you're not
+		paying, you're the product.
+	</p>
+{/if}
+
+<button disabled={!yes} onclick={() => alert("Subscription Confirmed!")}>Subscribe</button>
+```
+
+#### Select Bindings:
+- We can also use `bind:value` with `<select>` elements:
+	```svelte 
+	<select bind:value={selected} onchange={() => answer = ''}>
+	```
+- Here the `<option>` values are objects rather than strings. 
+- Notice that we haven't set an initial value of selected, the binding will set it to the default value automatically.
+
+- Be careful though:
+	- until the binding is initialized , `selected` remains undefined, so we can't blindly reference `selected.id` in this template.
+
+#### Group Inputs:
+- If we have multiple type="radio" , type="checkbox" inputs relating to the same value, we can use bind:group along with the value attribute. 
+- Radio inputs in the same group are mutually exclusive, checkbox inputs in the same group form an array of selected values.
+```svelte 
+
+<script>
+	let scoops = $state(1);
+	let flavours = $state([]);
+
+	const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
+</script>
+
+<h2>Size</h2>
+
+{#each [1, 2, 3] as number}
+	<label>
+		<input
+			type="radio"
+			name="scoops"
+			value={number}
+		/>
+
+		{number} {number === 1 ? 'scoop' : 'scoops'}
+	</label>
+{/each}
+
+<h2>Flavours</h2>
+
+{#each ['cookies and cream', 'mint choc chip', 'raspberry ripple'] as flavour}
+	<label>
+		<input
+			type="checkbox"
+			name="flavours"
+			value={flavour}
+		/>
+
+		{flavour}
+	</label>
+{/each}
+
+{#if flavours.length === 0}
+	<p>Please select at least one flavour</p>
+{:else if flavours.length > scoops}
+	<p>Can't order more flavours than scoops!</p>
+{:else}
+	<p>
+		You ordered {scoops} {scoops === 1 ? 'scoop' : 'scoops'}
+		of {formatter.format(flavours)}
+	</p>
+{/if}
+
+```
+
+#### Select Multiple:
+- a select element can have a multiple attribute, in which case it will populate an array rather than selecting a single value.
+```svelte 
+
+<h2>Flavours</h2>
+
+<select multiple bind:value={flavours}>
+	{#each['cookies and cream', 'mint choc chip', 'raspberry ripple'] as flavour}
+		<option>{flavour}</option>
+	{/each}
+</select>
+```
+
+- We are able to omit the value attribute on the `<option>` , since the value is identical to the element's contents.
+
+#### TextArea Inputs:
+- `<textarea>` element behaves similarly to a text input in Svelte -> use `bind: value`:
+	```svelte 
+	<textarea bind:value={value}></textarea>
+	```
+- here we can also use a shorthand form:
+```svelte 
+	<textarea bind:value></textarea>
+```
+
+#### class attribute:
+- We can specify classes with a JS attribute. Can add a flipped class to the card:
+- However better way is to adding or removing a class based on some condition is such a common pattern , Svelte allows us to pass an object or array that is converted to a string by clsx.
+
+```svelte 
+<button 
+class={["card", {flipped}]}
+onclick={() => flipped = !flipped}
+>
+```
+- always add the card class and add the flipped class whenever flipped is truthy.
+
+#### Style Directive:
+- As with class, we can write our inline style attributes literally, because Svelte is really HTML with fancy bits.
+- We can write clean directive using style directive.
+```svelte 
+
+<button 
+class="card"
+style:transform={flipped ? 'rotateY(0)' : ''}
+style:--bg-1="palegoldenrod"
+style:--bg-2="black"
+style:--bg-3="goldenrod"
+onclick={() => flipped = !flipped}
+>
+```
+
+#### Component Styles:
+- Often, we need to influence the styles inside a child component,
+	1. one way to do this is with the :global CSS modifier
