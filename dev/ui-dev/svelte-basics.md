@@ -267,9 +267,7 @@ count: 0,
 </script>
 ```
 - Note: we cannot export a $state declaration from a module if the declaration is reassigned (rather than jus mutated), because the importers then would have no way to know about it.
-
 ## Props:
-
 ### Declaring Props:
 - Till now, we have only dealt exclusively with internal state -> the values are only accessible withing a given component.
 - In any real applications, we will need to pass data from one component down to its children. To do that, we need to declare properties, or props. In Svelte we do that using `$props` rune.
@@ -564,9 +562,6 @@ export async function roll() {
 	<p style="color: red">{error.message}</p>
 {/await}
 ```
-
-
-
 ## Events:
 
 ### DOM Events:
@@ -658,10 +653,9 @@ The pointer is at {m.x} x {m.y}
 ```
 - we can also spread the event handlers directly onto elements. Here , we have defined an onclick handler in `App.svelte` - all we need to do is pass the props to the `<button>`
 in `BigRedButton.svelte`
+## Bindings:
 
-### Bindings:
-
-#### Text Inputs:
+### Text Inputs:
 - Data flow in Svelte is top down - a parent component can set props on a child component, and a component can set attributes on an element, but not the other way round.
 
 - Take the case of the `<input>` element in this component - we could add an oninput event handler that sets the value of `name` to `event.target.value` -> boilerplatey.
@@ -673,7 +667,7 @@ in `BigRedButton.svelte`
 	```
 - not only will it change to the value of name update the input value, but changes to the input value will update name.
 
-#### Numeric Inputs:
+### Numeric Inputs:
 - In DOM, every input value is a string. Very unhelpful when we are dealing with numeric inputs - type="number" etc. - i.e we have to coerce `input.value` before using it.
 
 - bind:value in svelte takes care for it automatically.
@@ -684,7 +678,7 @@ in `BigRedButton.svelte`
 </label>
 ```
 
-#### Checkbox Inputs:
+### Checkbox Inputs:
 - Checkboxes used for toggling bw states. Instead of binding to `input.value`, we bind to `input.checked`.
 ```svelte 
 <input type="checkbox" bind:checked={yes}>
@@ -715,7 +709,7 @@ in `BigRedButton.svelte`
 <button disabled={!yes} onclick={() => alert("Subscription Confirmed!")}>Subscribe</button>
 ```
 
-#### Select Bindings:
+### Select Bindings:
 - We can also use `bind:value` with `<select>` elements:
 	```svelte 
 	<select bind:value={selected} onchange={() => answer = ''}>
@@ -726,7 +720,7 @@ in `BigRedButton.svelte`
 - Be careful though:
 	- until the binding is initialized , `selected` remains undefined, so we can't blindly reference `selected.id` in this template.
 
-#### Group Inputs:
+### Group Inputs:
 - If we have multiple type="radio" , type="checkbox" inputs relating to the same value, we can use bind:group along with the value attribute. 
 - Radio inputs in the same group are mutually exclusive, checkbox inputs in the same group form an array of selected values.
 ```svelte 
@@ -779,7 +773,7 @@ in `BigRedButton.svelte`
 
 ```
 
-#### Select Multiple:
+### Select Multiple:
 - a select element can have a multiple attribute, in which case it will populate an array rather than selecting a single value.
 ```svelte 
 
@@ -794,7 +788,7 @@ in `BigRedButton.svelte`
 
 - We are able to omit the value attribute on the `<option>` , since the value is identical to the element's contents.
 
-#### TextArea Inputs:
+### TextArea Inputs:
 - `<textarea>` element behaves similarly to a text input in Svelte -> use `bind: value`:
 	```svelte 
 	<textarea bind:value={value}></textarea>
@@ -804,7 +798,7 @@ in `BigRedButton.svelte`
 	<textarea bind:value></textarea>
 ```
 
-#### class attribute:
+### class attribute:
 - We can specify classes with a JS attribute. Can add a flipped class to the card:
 - However better way is to adding or removing a class based on some condition is such a common pattern , Svelte allows us to pass an object or array that is converted to a string by clsx.
 
@@ -816,7 +810,7 @@ onclick={() => flipped = !flipped}
 ```
 - always add the card class and add the flipped class whenever flipped is truthy.
 
-#### Style Directive:
+### Style Directive:
 - As with class, we can write our inline style attributes literally, because Svelte is really HTML with fancy bits.
 - We can write clean directive using style directive.
 ```svelte 
@@ -831,6 +825,130 @@ onclick={() => flipped = !flipped}
 >
 ```
 
-#### Component Styles:
+### Component Styles:
 - Often, we need to influence the styles inside a child component,
-	1. one way to do this is with the :global CSS modifier
+	1. one way to do this is with the :global CSS modifier, which will allow us to indiscriminately 
+	target the elements inside other components.
+	```svelte 
+
+	<style>
+		.boxes :global(.box:nth-child(1)) {
+			background-color: red;
+		}
+		
+		.boxes :global(.box:nth-child(2)) {
+			background-color: green;
+		}
+
+		.boxes :global(.box:nth-child(3)) {
+			background-color: blue;
+		}
+	</style>
+	```
+	2. Lots of reasons not to do that.Extremely verbose and brittle - any changes 
+	to the implementation details of Box.svelte could break the selector.
+
+	3. Components should be able to decide for themselves which styles can be controlled from outside,
+	in the same way they decide which variables are exposed as props. 
+	:global should be escape hatch- not a common paradigm.
+
+	4. Any parent element, can set the value of --color, but we can also set it on individual components
+	and the values can be dynamic , like any other attribute.
+## Actions:
+
+### use directive 
+- Actions are essentially element-level lifecycle functions. Useful for things like:
+	- interfacing with 3rd party libraries
+	- lazy-loaded images 
+	- tooltips
+	- adding custom event handlers 
+
+- Have to be written in .svelte.js / .svelte.ts files 
+- Action event using use directive:
+```svelte 
+<script lang="ts">
+	import Canvas from './Canvas.svelte';
+	import {trapFocus} from './actions.svelte.js';
+
+	const colors = ['red','orange'];
+
+	let selected = $state(colors[0]);
+	let size = $state(10);
+	let showMenu = $state(true);
+</script>
+```
+- And the we can use to add to the menu with the use: directive:
+```svelte 
+<div class="menu" use:trapFocus>
+```
+
+- Example of trapFocus:
+```js 
+export function trapFocus(node) {
+	const previous = document.activeElement;
+
+	function focusable() {
+		return Array.from(node.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
+	}
+
+	function handleKeydown(event) {
+		if (event.key !== 'Tab') return;
+
+		const current = document.activeElement;
+
+		const elements = focusable();
+		const first = elements.at(0);
+		const last = elements.at(-1)
+
+		if (event.shiftKey && current === first) {
+			last.focus();
+			event.preventDefault();
+		}
+
+		if (!event.shiftKey && current === last) {
+			first.focus();
+			event.preventDefault();
+		}
+	}
+
+	$effect(() => {
+		focusable()[0]?.focus();
+		// TODO finish writing the action
+		//adding an event listener that will intercept the Tab key press
+		node.addEventListener('keydown',handleKeydown);
+
+		//clenaup when the node is unmounted -> remove the event listener and restore the focus to where 
+		// it was before the element mounted 
+
+		return(() => {
+			node.removeEventListener('keydown',handleKeydown);
+			previous?.focus();
+		});
+	});
+}
+```
+
+### adding parameters:
+- Like traditional transitions and animations, an action can take an argument,
+which the action function will be called with alongside the element it belongs to.
+- Assume some function already implemented, we first need the action to return some options to send to tippy:
+```js 
+function tooltip(node,fn) {
+	$effect(() => {
+		const tooltip = tippy(node,fn());
+		return tooltip.destroy;
+	});
+}
+```
+- Remember, we are passing in a function, rather than the options themselves, since the tooltip function 
+will not re-run when the options change.
+```svelte 
+<button use:tooltip={() => ({ content}) }>
+</button>
+```
+## Transitions:
+
+### Transition Directive:
+- Svelte has an transition directive builtin , through which we can make more appealing 
+user interfaces by gracefully transitioning elemnts into and out of the DOM.
+
