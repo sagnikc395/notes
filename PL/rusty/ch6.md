@@ -1,14 +1,14 @@
 ---
-title: Enums and Pattern Matching
+titl: Enums and Pattern Matching
 tags:
-    - rust 
-    - pattern-matching
-    - enums
-    - compilers
+  - rust
+  - pattern-matching
+  - enums
+  - compilers
 date: 23/1/25
---- 
+---
 
-### Defining and Enum:
+### Defining an Enum:
 - While structs gives us a way of grouping together related fields and data , enums gives us a way of saying a value is one of a possible set of values.
 - Eg: Since there are only 2 possibiliteis of an IP address that our program will come across, we can enumerate all possible variants , which is enumeration gets its name.
 - Any enum can either v4 or v6, but not both at the same time. That property of IP addresses makes the enum data structure appropriate because an enum value can only be one of its variants.

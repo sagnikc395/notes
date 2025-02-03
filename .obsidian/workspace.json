@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5da197eb99cd5444",
+        "id": "02a2025543e3d22d",
         "type": "tabs",
         "children": [
           {
-            "id": "ce17ccb66739d55e",
+            "id": "012d22f8352a2a3b",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "cs-fundamentals/Screenshot 2024-12-13 at 12.48.17 PM.png"
+                "file": "PL/rusty/ch7.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Screenshot 2024-12-13 at 12.48.17 PM"
+              "icon": "lucide-file",
+              "title": "ch7"
             }
           }
         ]
@@ -180,8 +182,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ce17ccb66739d55e",
+  "active": "012d22f8352a2a3b",
   "lastOpenFiles": [
+    "PL/rusty/ch6.md",
+    "PL/rusty/ch7.md",
+    "cs-fundamentals/Screenshot 2024-12-13 at 12.48.17 PM.png",
     "cs-fundamentals/computer-networks/CN-Introduction.md",
     "cs-fundamentals/computer-networks/CN-Notes.md",
     "cs-fundamentals/computer-architecture/Lecture2.md",
@@ -216,13 +221,10 @@
     "Finance/15.401_finance_theory_1/Lecture1.md",
     "dev/boot-dev-notes/img/Screenshot 2025-01-14 at 12.35.21 PM.png",
     "dev/boot-dev-notes/img/Screenshot 2025-01-14 at 12.27.48 PM.png",
-    "dev/boot-dev-notes/img/Screenshot 2025-01-14 at 12.27.17 PM.png",
     "dev/boot-dev-notes/img",
     "dev/boot-dev-notes/Algorithms-2.md",
     "dev/boot-dev-notes/Data Structures.md",
     "dev/boot-dev-notes/Algorithms.md",
-    "dev/boot-dev-notes/Functional Programming.md",
-    "AI/PyTorch-notes/README.md",
     "etc",
     "dev/ui-dev",
     "PL/Type-Theory-and-Formal-Proof",
