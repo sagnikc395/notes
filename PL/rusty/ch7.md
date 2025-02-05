@@ -90,4 +90,16 @@ date: 2/1/25
 - pub keyword on a module only lets the code in its ancestor module refer to it, not access its inner code. Because modules are containers, there is not much we can do by only making the module public -> we need to go further and choose to make one or more of the items within the module public as well.
 
 - For relative path, rather than starting from crate root, the path starts from front_of_house. The front_of_house module is defined within the same module as eat_at_resturant, so the relative path starting from the module in which eat_at_resturant is defined works.
-- 
+
+### Relative Paths with Super
+- we can construct relative paths that begin in the parent module, (rather than in curren module /crate root) by using super at the start of the path.
+- Like starting a filesystem path with the .. syntax. Using super allows us to reference an item that we know is in the parent module, which can make rearranging the module tree easier when the module is closely related to the parent but the parent might be moved eslewhere in module tree someday.
+
+### Making structs and enums public:
+- can also use pub to designate structs and enums as public, but there are a few extra details to the usage of pub with structs and enums.
+- If we use pub before a struct definition, we make the struct public, but the struct's fields will still be private. We can make each field public or not on a case-by-case basis, and then required public consturctors, getters and setter methods.
+
+- By contrast, if we make an Enum public, all of its variants are then public, since Enums aren't useful unless their variants are public -> would be annonying to have to annotate all enum variants with pub in each case , so the default for enum variants is to be public.
+
+- Structs are often useful without their fields being public, so struct fields follow the general rule of everything being private by default unless annotated with pub.
+
