@@ -103,3 +103,16 @@ date: 2/1/25
 
 - Structs are often useful without their fields being public, so struct fields follow the general rule of everything being private by default unless annotated with pub.
 
+### Bringing Paths to scope with the use keyword 
+
+- Wheher we choose the absolute or relative paths , we had to specify front_of_house and hosting too.
+- Fortunately, there is a way to simplify this process: we can create a shirtcut to a path with the use keyword once,
+and then use the shorter name everywhere else in the scope.
+
+- we can bring the `crate::front_of_house::hosting` module into the scope of the 
+`eat_at_resturant` function so we only have to specify `hosting::add_to_waitlist` to call the `add_to_waitlist` function in eat_at_resturant.
+
+- Adding use and a path in a scope, is like creating a symbolic link in the filesystem. By adding use crate::front_of_house::hosting in the crate root, 
+hosting is now valid name in that scope, just as though the hosting module has been defined in the crate root.
+
+- use only creates the shortcut for the particular scope in which the use occurs.
