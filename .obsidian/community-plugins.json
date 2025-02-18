@@ -6,5 +6,6 @@
   "obsidian-excalidraw-plugin",
   "obsidian-git",
   "code-styler",
-  "svelte-syntax-highlighter"
+  "svelte-syntax-highlighter",
+  "codeblock-customizer"
 ]
