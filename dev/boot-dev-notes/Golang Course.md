@@ -714,4 +714,109 @@ interface{}
 - Interfaces are implemented _implicitly_.
 - A type never declares that it implements a given interface. If an interface exists and a type has the proper methods defined, then the type automatically fulfills that interface.
 - A quick way of checking whether a struct implements an interface is to declare a function that takes an interface as an argument. If the function can take the struct as an argument, then the struct implements the interface.
+- A type implements an interface by implementing its methods. Unlike in many other languages, there is no explicit declaration of intent, there is no "implements" keyword.
+- Implicit interfaces _decouple_ the definition of an interface from its implementation. You may add methods to a type and in the process be unknowingly implementing various interfaces, and _that's okay_.
+-  interfaces are collections of method signatures. A type "implements" an interface if it has all of the methods of the given interface defined on it.
+
+```go
+type shape interface {
+  area() float64
+}
+```
+- If a type in your code implements an `area` method, with the same signature (e.g. accepts nothing and returns a `float64`), then that object is said to _implement_ the `shape` interface.
+
+```go
+type circle struct{
+	radius int
+}
+
+func (c circle) area() float64 {
+  return 3.14 * c.radius * c.radius
+}
+```
+
+#### Multiple Interfaces:
+- A type can implement any number of interfaces in Go. For example, the [empty interface](https://go.dev/tour/methods/14), `interface{}`, is _always_ implemented by every type because it has no requirements.
+```go
+package main
+
+import "fmt"
+
+func (e email) cost() int {
+	// ?
+	if ! e.isSubscribed {
+		return len(e.body) * 5
+	} 
+	return len(e.body) * 2
+}
+
+func (e email) format() string {
+	// ?
+	var s string 
+	if ! e.isSubscribed {
+		s = fmt.Sprintf("'%s' | Not Subscribed",e.body)	
+	} else {
+		s = fmt.Sprintf("'%s' | Subscribed",e.body)
+	}
+	return s 
+}
+
+type expense interface {
+	cost() int
+}
+
+type formatter interface {
+	format() string
+}
+
+type email struct {
+	isSubscribed bool
+	body         string
+}
+
+```
+
+#### Name Your Interface Parameters:
+- Consider the following interfaces:
+```go 
+type Copier interface {
+	Copy(string,string) int 
+}
+```
+
+- We know the function signature expects 2 string types, but what are they? Filenames? URLs? Raw string data? For that matter, what the heck is that `int` that's being returned?
+- Let's add some named parameters and return data to make it more clear.
+
+```go
+type Copier interface {
+  Copy(sourceFile string, destinationFile string) (bytesCopied int)
+}
+```
+
+#### Type Assertions in Go:
+- When working with interfaces in Go, every once-in-awhile you'll need access to the underlying type of an interface value. You can cast an interface to its underlying type using a [type assertion](https://go.dev/tour/methods/15).
+- The example below shows how to safely access the `radius` field of `s` when `s` is an unknown type:
+	- we want to check if `s` is a `circle` in order to cast it into its underlying concrete type
+	- we know `s` is an instance of the `shape` interface, but we do not know if it's also a `circle`
+	- `c` is a new `circle` struct cast from `s`
+	- `ok` is `true` if `s` is indeed a `circle`, or `false` if `s` is NOT a `circle`
+
+```go
+type shape interface {
+	area() float64
+}
+
+type circle struct {
+	radius float64
+}
+
+c, ok := s.(circle)
+if !ok {
+	// log an error if s isn't a circle
+	log.Fatal("s is not a circle")
+}
+
+radius := c.radius
+```
+
 - 
