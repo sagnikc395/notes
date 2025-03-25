@@ -30,7 +30,7 @@ date: 13/12/24
 ### Basic Goals and Structure of DDCA:
 - Goal: How Computers Work(from the ground up)
 - How a broad system of modern computers work from the ground up.
-![Apple Chip](image.png)
+![Apple Chip](cs-fundamentals/computer-architecture/image.png)
 
 ### Major High Level Goals of this Course:
 
@@ -73,7 +73,7 @@ date: 13/12/24
 	- Devices run on top of it.
 	- which manipulate electrons.
 
-- ![Transformation Hierarchy](image-1.png)
+- ![Transformation Hierarchy](cs-fundamentals/computer-architecture/image-1.png)
 
 - SW/HW Interface and Micro-Architecture region is the narrow /traditional of Computer Architecture.
 - but nowadays architecture are much broader and cut across the stack.

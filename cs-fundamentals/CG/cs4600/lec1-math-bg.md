@@ -18,8 +18,8 @@ date: 24/1/25
         - mostly we deal with 2D,3D and 4D.
         - very very frequenlty in computer graphics.
         - nD vectors have places in computer graphics. 
-        - ![Typical Notation](image.png)
-        - ![Transposed Version](image-1.png)
+        - ![Typical Notation](cs-fundamentals/CG/cs4600/image.png)
+        - ![Transposed Version](cs-fundamentals/CG/cs4600/image-1.png)
     - Matrices 
         - 
 - 

@@ -18,7 +18,7 @@ date: 22/1/25
 
 ### Set 
 - (for the course) is a bag of dots.
-- ![alt text](image.png)
+- ![alt text](PL/applied-category-theory/image.png)
 - Then we can say:
     - $a \in A$
     - $b \in A$
@@ -35,7 +35,7 @@ date: 22/1/25
 - Suppose $A$ and $B$ are sets , then 
 $$A * B := {(a,b) | a \in A, b \in B}$$
 - So someone comes and indicates $A$ and another one comes and indicates $B$, so together they have indicated $A*B$.
-- ![alt text](image-1.png)
+- ![alt text](PL/applied-category-theory/image-1.png)
 - In category theory , we dont actually think about what are the actual made up on the document, rather what roles do they play, so mathematically in set theory this is different
 $ {} $ , $ {\phi} $ , $ {{\phi}} $, in category theory , they are playing the same roles hence they are same.
 

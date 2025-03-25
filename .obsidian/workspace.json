@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "dba3569fe364c228",
+        "id": "afc30384f7e275f8",
         "type": "tabs",
         "children": [
           {
-            "id": "274ef4983c731521",
+            "id": "fa0489f520260a62",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "dev/boot-dev-notes/Golang Course.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Golang Course"
+              "title": "New tab"
             }
           }
         ]
@@ -88,8 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 415.5,
-    "collapsed": true
+    "width": 415.5
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -183,8 +178,22 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "274ef4983c731521",
+  "active": "d680898ef741b3b8",
   "lastOpenFiles": [
+    "PL/crafting-interpreters/ch1.md",
+    "PL/crafting-interpreters/ch2.md",
+    "PL/crafting-interpreters/ch3.md",
+    "PL/writing-an-interpreter-in-go/ch1-lexing.md",
+    "PL/writing-an-interpreter-in-go/ch0-monkey-lang.md",
+    "project-ideas/pl-research-2.md",
+    "project-ideas/what-is-pl-research.md",
+    "project-ideas/masters - work description.md",
+    "project-ideas/ProjectIdeas.md",
+    "project-ideas/franz.md",
+    "cs-fundamentals/CG/cs4600/lec1-math-bg.md",
+    "PL/writing-a-c-compiler/Ch1 - Minimal Compiler.md",
+    "PL/writing-an-interpreter-in-go",
+    "dev/boot-dev-notes/Golang Course.md",
     "dev/boot-dev-notes/img/Screenshot 2025-03-23 at 9.52.48 PM.png",
     "notes-to-self/book-reviews/tractatus.md",
     "notes-to-self/philosophy/basics of classic western philosophy.md",
@@ -192,9 +201,8 @@
     "notes-to-self/stuff/agi and my existential risk.md",
     "notes-to-self/stuff/no new ideas.md",
     "notes-to-self/stuff/sense, reference and language.md",
-    "dev/boot-dev-notes/Golang Course.md",
-    "AI/Papers/stable-diffusion/Stable Diffusion - text-to-image model.md",
-    "AI/Papers/stable-diffusion",
+    "cs-fundamentals/AI/Papers/stable-diffusion/Stable Diffusion - text-to-image model.md",
+    "cs-fundamentals/AI/Papers/stable-diffusion",
     "PL/DAOFP/Lecture1.md",
     "PL/rusty/ch5.md",
     "PL/DAOFP",
@@ -202,24 +210,13 @@
     "PL/rusty/ch4.md",
     "PL/rusty/ch7.md",
     "PL/rusty/ch8.md",
-    "CG/lecture1.md",
-    "CG",
-    "PL/paper-reviews/untyped-lambda-calculas.md",
+    "cs-fundamentals/CG",
     "PL/paper-reviews",
-    "dev/boot-dev-notes/Learn Memory Management.md",
-    "AI/cs234/Lecture1.md",
-    "PL/computational-type-theory/lecture1.md",
-    "PL/computational-type-theory/README.md",
     "PL/computational-type-theory",
-    "AI/cs234/Screenshot 2025-02-05 at 1.42.16 AM.png",
-    "AI/cs234/README.md",
-    "AI/cs224n/Lecture1.md",
-    "AI/cs234",
-    "AI/cs224n/README.md",
-    "AI/nn-from-scratch/README.md",
-    "AI/cs224n",
-    "AI/nn-from-scratch",
-    "PL/crafting-interpreters/ch1.md",
+    "cs-fundamentals/AI/cs234/Screenshot 2025-02-05 at 1.42.16 AM.png",
+    "cs-fundamentals/AI/cs234",
+    "cs-fundamentals/AI/cs224n",
+    "cs-fundamentals/AI/nn-from-scratch",
     "cs-fundamentals/Screenshot 2024-12-13 at 12.48.17 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.25.55 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.25.05 PM.png",
@@ -230,8 +227,6 @@
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.02.30 PM.png",
     "cs-fundamentals/algorithms-datastructures",
     "PL/Untitled.canvas",
-    "PL/writing-a-c-compiler",
-    "dev/boot-dev-notes/img/Screenshot 2025-01-14 at 12.35.21 PM.png",
     "Papers/transformer/Untitled.canvas",
     "Untitled.canvas"
   ]
