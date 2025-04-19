@@ -1,0 +1,5 @@
+#+TITLE: Org Mode Basics
+#+author: sagnik chatterjee
+#+date: <2025-04-10 Thu>
+
+- O
