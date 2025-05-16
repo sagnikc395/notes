@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "46330e2f664f7d2c",
+        "id": "e1aef9a22fa424b5",
         "type": "tabs",
         "children": [
           {
-            "id": "80d9a84301b7882e",
+            "id": "96e9384c6b43b760",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tools/emacs-lisp-1.md",
+                "file": "PL/PL-README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "emacs-lisp-1"
+              "title": "PL-README"
             }
           }
         ]
@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 415.5,
-    "collapsed": true
+    "width": 415.5
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -179,50 +178,51 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "80d9a84301b7882e",
+  "active": "96e9384c6b43b760",
   "lastOpenFiles": [
+    "PL/FP/Semigroup.md",
+    "PL/FP/teach-yourself-racket.md",
+    "PL/FP/FP-Readme.md",
+    "dev/boot-dev-notes/Python From Scratch.md",
+    "PL/computational-type-theory/lecture1.md",
+    "PL/applied-category-theory/APP-CATEGORY-THEORY-README.md",
+    "PL/applied-category-theory/Lecture1-Applied-Category-Theory.md",
+    "dev/boot-dev-notes/Shells and Terminals.md",
+    "dev/boot-dev-notes/Git - 1.md",
+    "dev/boot-dev-notes/Project-Asteroids.md",
+    "dev/boot-dev-notes/Object Oriented Programming in Python.md",
+    "dev/boot-dev-notes/Functional Programming.md",
+    "dev/boot-dev-notes/Algorithms.md",
+    "dev/boot-dev-notes/README.md",
+    "dev/boot-dev-notes/Algorithms-2.md",
+    "dev/boot-dev-notes/Data Structures.md",
+    "dev/boot-dev-notes/Learn Memory Management.md",
     "dev/backend-engineering.md",
+    "cs-fundamentals/Screenshot 2024-12-13 at 12.48.17 PM.png",
+    "dev/ui-dev/svelte-basics.md",
+    "dev/ui-dev/sveltekit.md",
+    "dev/ui-dev/learn-tailwind.md",
+    "dev/ui-dev/UI-DEV-README.md",
+    "PL/functional-programming-lean/ch3.md",
+    "PL/functional-programming-lean/ch2.md",
+    "PL/functional-programming-lean/ch1.md",
+    "PL/functional-programming-lean",
+    "Untitled",
     "tools/emacs-lisp-1.md",
     "tools",
-    "dev/ui-dev/sveltekit.md",
-    "dev/ui-dev/svelte-basics.md",
-    "Projects/codecrafters-projects/go-http-server.md",
-    "PL/writing-an-interpreter-in-go/ch1-lexing.md",
     "Projects/codecrafters-projects",
     "Projects",
-    "PL/crafting-interpreters/ch1.md",
-    "PL/crafting-interpreters/ch2.md",
-    "PL/crafting-interpreters/ch3.md",
-    "PL/writing-an-interpreter-in-go/ch0-monkey-lang.md",
-    "project-ideas/pl-research-2.md",
-    "project-ideas/what-is-pl-research.md",
-    "project-ideas/masters - work description.md",
-    "project-ideas/ProjectIdeas.md",
-    "project-ideas/franz.md",
-    "cs-fundamentals/CG/cs4600/lec1-math-bg.md",
-    "PL/writing-a-c-compiler/Ch1 - Minimal Compiler.md",
     "PL/writing-an-interpreter-in-go",
-    "dev/boot-dev-notes/Golang Course.md",
     "dev/boot-dev-notes/img/Screenshot 2025-03-23 at 9.52.48 PM.png",
-    "notes-to-self/book-reviews/tractatus.md",
-    "notes-to-self/philosophy/basics of classic western philosophy.md",
-    "notes-to-self/stuff/about soltitude and growing old.md",
-    "notes-to-self/stuff/agi and my existential risk.md",
-    "notes-to-self/stuff/no new ideas.md",
-    "notes-to-self/stuff/sense, reference and language.md",
-    "cs-fundamentals/AI/Papers/stable-diffusion/Stable Diffusion - text-to-image model.md",
     "cs-fundamentals/AI/Papers/stable-diffusion",
-    "PL/DAOFP/Lecture1.md",
     "PL/DAOFP",
     "cs-fundamentals/CG",
     "PL/paper-reviews",
-    "PL/computational-type-theory",
     "cs-fundamentals/AI/cs234/Screenshot 2025-02-05 at 1.42.16 AM.png",
-    "cs-fundamentals/AI/cs234",
-    "cs-fundamentals/Screenshot 2024-12-13 at 12.48.17 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.25.55 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.25.05 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.24.43 PM.png",

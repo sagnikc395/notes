@@ -1,7 +1,7 @@
 {
   "cssTheme": "Sanctum",
   "interfaceFontFamily": "Inter",
-  "textFontFamily": "Hack",
-  "baseFontSize": 15,
+  "textFontFamily": "Input Mono",
+  "baseFontSize": 16,
   "monospaceFontFamily": "Monaspace Neon"
 }

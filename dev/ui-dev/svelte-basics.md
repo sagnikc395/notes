@@ -724,7 +724,6 @@ in `BigRedButton.svelte`
 - If we have multiple type="radio" , type="checkbox" inputs relating to the same value, we can use bind:group along with the value attribute. 
 - Radio inputs in the same group are mutually exclusive, checkbox inputs in the same group form an array of selected values.
 ```svelte 
-
 <script>
 	let scoops = $state(1);
 	let flavours = $state([]);
@@ -770,7 +769,6 @@ in `BigRedButton.svelte`
 		of {formatter.format(flavours)}
 	</p>
 {/if}
-
 ```
 
 ### Select Multiple:
@@ -794,8 +792,8 @@ in `BigRedButton.svelte`
 	<textarea bind:value={value}></textarea>
 	```
 - here we can also use a shorthand form:
-```svelte 
-	<textarea bind:value></textarea>
+```svelte
+	<textarea bind:value>{val}</textarea>
 ```
 
 ### class attribute:
