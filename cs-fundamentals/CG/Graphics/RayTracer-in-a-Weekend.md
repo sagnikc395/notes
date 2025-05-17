@@ -63,4 +63,30 @@ tags:
 - If a given point $(x,y,z)$ is inside the sphere, then $x^2+y^2+z^2 < r^2$ and if a given point $(x,y,z)$ is outside the sphere, then $x^2+y^2+z^2 > r^2$.
 - If we want to allow the sphere center to be at an arbitrary point (𝐶𝑥,𝐶𝑦,𝐶𝑧)(Cx,Cy,Cz), then the equation becomes a lot less nice: $(𝐶𝑥−𝑥)2+(𝐶𝑦−𝑦)2+(𝐶𝑧−𝑧)2=𝑟2$
 - any point 𝐏P that satisfies this equation is on the sphere”. We want to know if our ray 𝐏(𝑡)=𝐐+𝑡𝐝P(t)=Q+td ever hits the sphere anywhere. If it does hit the sphere, there is some 𝑡t for which 𝐏(𝑡)P(t) satisfies the sphere equation. So we are looking for any 𝑡t where this is true: $(𝐂−𝐏(𝑡))⋅(𝐂−𝐏(𝑡))=𝑟2$ 
+
+## Surface Normals and Multiple Objects:
+
+#### Shading with Surface Normals
+- surface normal -> vector that is perpendicular to the surface at the point of intersection.
+	- If a unit length normal vector is ever required, then we might as well do it up front once, instead of over and over again for every location where unit-length is required.
+	- We do require unit-length normal vectors in several places
+	- If we require normal vectors to be unit length, then we can often efficiently generate that vector with an understanding of the specific geometry class, in the constructor of in the hit() function.
+	- Sphere normals can be made unit length simply by dividing by the sphere radius, avoiding the equare root entirely.
+- A common trick used for visualizing normals is to map each component to the interval from 0 to 1 , and then map (x,y,z) to (red,green,blue). For the normal, we need the hit point, not just whether we hit or not. 
+- We have only sphere in the scene, and its directly in front of the camera, so we wont worry about negative values of t yet. Just assume the closest hit point(smallest t) is the one that we want. These changes in the code let us compute and visualize n.
+
+#### Abstraction for Hittable Objects:
+- Making a abstract class for anything a ray might hit, and make both a sphere and a list of spheres just something that can be hit. What that class should be called is something of a quandry -> calling an "object" would be good if not for "object-oriented" programming.
+- hittable abstract class will have a hit function that takes in a ray. Most ray tracers have found it convenient to add a valid literal for hits tmin to tmax, so the hit only 'counts' if tmin < t < tmax. For the initial rays this is positive t, but as we see, it can simplify our code to have an interval tmin to tmax.
+
+#### Front Faces Versus back Faces:
+- Second design decision for normals is whether they should always point out. At present, the normal found will always be in the direction of the center to the intersection point(the normal points out). 
+- If the ray intersects the sphere from the inside, the normal (which always points out,) points with the ray. Alternatively, we can have the normal always point against the ray.
+- If the ray is outside the sphere, the normal will point outward, but if the ray is inside the sphere, the normal will point inward.
+- We would need to choose one of them because we will eventually want to determine which side of the surface that the ray is coming from. This is important for objects that are rendered differently on each side, like the text on a two-sided sheet of paper,or for objects that have an inside and an outside, like glass balls.
+- To determine, which side the ray is on when we color it -> figure this out by comparing the ray with the normal. If the ray and the normal face in the same direction, the ray is inside the object, if the rat and the normal face in the opposite direction, then the ray is outside the object. 
+- We can set things up so that normals always point "outward" from the surface,or always points against the incident ray. This decision is determined by whetehr we want to determine the side of the surface at the time of geometry intersection or at the time of coloring. 
+
+#### A list of hittable objects:
+- Add a new class that stores a list of hittables -> based on the generic objects called a hittable.
 - 
