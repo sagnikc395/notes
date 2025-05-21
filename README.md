@@ -1,5 +1,5 @@
-## notes
-My notes and stuff.
+## knowledgebase
+My wealth of information and knowledge base.
 
 ### Directions for use:
 - Just simply install Obsidian from the package managers/ app stores.

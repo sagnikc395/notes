@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e1aef9a22fa424b5",
+        "id": "8a014ca515d6df59",
         "type": "tabs",
         "children": [
           {
-            "id": "96e9384c6b43b760",
+            "id": "d19e624adfda72f9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cs-fundamentals/CG/Graphics/RayTracer-in-a-Weekend.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RayTracer-in-a-Weekend"
+              "title": "README"
             }
           }
         ]
@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 415.5,
-    "collapsed": true
+    "width": 415.5
   },
   "right": {
     "id": "509e5bbbb1d015b0",
@@ -183,8 +182,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "96e9384c6b43b760",
+  "active": "d19e624adfda72f9",
   "lastOpenFiles": [
+    "AI/ml-performance-notes/gpu-architecture.md",
+    "AI/ml-performance-notes/Screenshot 2025-05-21 at 11.20.52 AM.png",
+    "AI/ml-performance-notes/Screenshot 2025-05-21 at 11.17.44 AM.png",
+    "AI/ml-performance-notes/Screenshot 2025-05-21 at 10.52.19 AM.png",
+    "AI/ml-performance-notes/Screenshot 2025-05-21 at 10.44.34 AM.png",
+    "AI/ml-performance-notes",
+    "AI",
+    "Projects/codecrafters-projects/pygrep.md",
+    "cs-fundamentals/CG/Graphics/RayTracer-in-a-Weekend.md",
     "PL/PL-README.md",
     "PL/FP/Semigroup.md",
     "PL/FP/teach-yourself-racket.md",
@@ -208,12 +216,7 @@
     "dev/ui-dev/svelte-basics.md",
     "dev/ui-dev/sveltekit.md",
     "dev/ui-dev/learn-tailwind.md",
-    "dev/ui-dev/UI-DEV-README.md",
-    "PL/functional-programming-lean/ch3.md",
-    "PL/functional-programming-lean/ch2.md",
-    "PL/functional-programming-lean/ch1.md",
     "PL/functional-programming-lean",
-    "Untitled",
     "tools",
     "Projects/codecrafters-projects",
     "Projects",
@@ -222,15 +225,10 @@
     "cs-fundamentals/AI/Papers/stable-diffusion",
     "PL/DAOFP",
     "cs-fundamentals/CG",
-    "PL/paper-reviews",
     "cs-fundamentals/AI/cs234/Screenshot 2025-02-05 at 1.42.16 AM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.25.55 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.25.05 PM.png",
     "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.24.43 PM.png",
-    "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.10.34 PM.png",
-    "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.07.56 PM.png",
-    "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.05.59 PM.png",
-    "cs-fundamentals/computer-architecture/Screenshot 2025-01-21 at 11.02.30 PM.png",
     "PL/Untitled.canvas",
     "Papers/transformer/Untitled.canvas",
     "Untitled.canvas"
