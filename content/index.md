@@ -1,6 +1,11 @@
 ---
-title: Welcome to Quartz
+title: README
+tags:
+  - AI
+  - notes
 ---
+a large parts of this notes are to preserve and maintain my notes so as to make a common platform on which I can maintain and build my database of content and a cohesive knowledge base on top of which I am able to think and take notes and build a graphical knowledge system that can provide a long term views on things
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+### why to take notes ?
+
+taking notes for larger things helps in building a larger context and understanding perspective for us as a humans and using the graphical and zettlekasten view will help us understand the cyclical nature of our knowledge.
