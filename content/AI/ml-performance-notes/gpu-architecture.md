@@ -1,8 +1,9 @@
 ---
 title: GPU Architecture, CUDA and NCCL
 tags:
-  - gpu
   - performance
+  - cuda
+  - gpus
 date: 21/5/25
 ---
 ### GPU Architecture
@@ -62,7 +63,7 @@ date: 21/5/25
 - Divergence Handling:
 	- Within a warp, all threads must execute the same instruction. If threads within a warp diverge(Eg: due to an if-else branch), the SM handles each divergent path sequentially, potentially reducing efficiency.
 
-#### latency comparision of memory/cache access versus computational operations.
+#### Latency comparison of memory/cache access versus computational operations.
 
 - ![[Screenshot 2025-05-21 at 11.17.44 AM.png]]
 - thing that we will grapple with training workloads/ ML workloads generally is that :
@@ -81,3 +82,52 @@ date: 21/5/25
 		- Compute Constraints -> floating point 32 data type, 982 tflops/s, dwarfs many of the other numbers.with all these constraints , our network bandwidth and so on, we are gonna struggle to feed GPU data quickly enough , to use all that power unless we carefully arrange when and how we move data over the network -> overlap it with computation -> or maybe do compiler optimizations like kernel fusions.
 		- or do more floating point operations that come in it.
 	-  From the official NVIDIA developer docs, the imbalance grows with lower precision data types.
+
+- One way is to think compute as a factory -> we send instructions to our factory (overhead), send it materials (memory bandwidth), all to keep our factory running efficiently (compute).
+- So if our factory increases efficiency faster than the rate at which we can supply it materials, it becomes harder for our factory to achieve its peak efficiency.
+
+- Important metrics for comparing the performance of GPU performance:
+	- **Arithmatic Intensity**
+		- ratio of FLOPs/bytes moved back and forth across HBM 
+		- Arithmatic intensity of the workload roughly equals to the arithmatic intensity of the hardware ? Compute bound -> so we perfer this.
+	- **MFU** 
+		- Model Flops Utilization; value bw 0 and 1 representing the ratio of the actual FLOPs/sec achieved vs peak FLOPs/sec achievable on this hardware.
+		- Also advertised in company blogs and stuff. avg is 45-55% not 100% for distributed training.
+
+#### Key Takeaways:
+- GPUs are optimized for throughput, not latency.
+- FLOPs/sec >>> memory bandwidth, memory access latency, network bandwidth
+- Peak FLOPs growing faster than HBM bandwidth.
+- We prefer workloads to be compute bound, not memory bound bandwidth bound.
+### CUDA:
+- CUDA(Compute Unified Device Architecture) is a parallel computing platform and programming model developed by NVIDIA that enables developers to use GPUs for general-purpose training.
+- Provides an extension of C/C++ ,allowing code to be executed in parallel across thousands of GPU cores:
+	- \*.cu files
+	- nvcc compiler 
+- Concretely, it provides a programming model with software abstractions for defining and executing kernels on NVIDIA GPUs.
+
+#### CUDA Programming Abstractions:
+##### Hierarchy:
+- Kernel executes in a thread.
+- Threads grouped into Thread blocks (aka blocks) 
+	- Threadblocks defined by the dimensions of how many threads / dim they are. Dont need to use all dimensions that are available to use.
+- Blocks grouped into a Grid 
+	- Break up your whole grid into  threadblocks 
+- Kernel executed as a Grid of blocks of Threads.
+##### 4 Technical Terms:
+- `gridDim` -> number of blocks in the grid 
+- `blockIdx` -> index of the block in the grid 
+- `blockDim` -> number of threads in a block 
+- `threadIdx` -> index of the thread in the block.
+- ![[Screenshot 2025-05-21 at 5.13.41 PM.png]]
+- CUDA Kernel is a function that runs in the GPU across many different threads.
+- when we launch the kernel we have to pass in many different things, i.e the 4 technical things we listed up there.
+
+#### Simple CUDA Program -> Naive MATMUL on CPU vs GPU (CUDA Kernel)
+- CPU allocates data structures in CPU memory.
+- CPU Copies data to GPU HBM.
+- CPU launches kernel on GPU (processing is done here)
+- GPU loads data from HBM to SRAM (on-chip memory)
+- CUDA runtime and SM warp schedulers work together to divide thread blocks into warps and execute them.
+- Result moves from SRAM to HBM.
+- CPU copies results from GPU HBM back to CPU memory to do something useful with it.
