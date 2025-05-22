@@ -1,11 +1,11 @@
 ---
 title: knowledge go brrr
 tags:
-  - AI
   - notes
   - gpus
   - program-synthesis
   - PL
+  - ai
 ---
 
 ## why i’m into PL + AI (and why u might wanna be too)
