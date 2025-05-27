@@ -91,3 +91,11 @@ type Lexer struct {
 	- `LoookupIdent` checks the keywords table to see whether the given identifier is in fact a keyword. If it is, it will return the keyword's TokenType constant. If it is not, we will just get back token.IDENT, which is in fact the TokenType for all user-defined identifiers.
 		- in the return tok statement, is necessary because when calling `readIdentifier()` we call `readChar()` repeatedly and advance our readPosition and position fields past the last character of the current identifier.
 	- `skipWhiteSpace()` is a little helper function which is found in a lot of parsers. Sometimes called `eatWhiteSpace()`etc. Which characters these functions actually skips depends on the language being lexed. Some language implementationms do create tokens for newline characters and then throw parsing errors if they are not at the correct place in the stream of tokens.
+	- `readNumber()` method is exactly the same as `readIndentifier()` except for its usage of `isDigit()` instead of `isLetter`. We can probably generalize this by passing in the characters-identifiying functions as arguments.
+		- Notice due to the educational aim of this book , we only read in integers, not floats or numbers or octal notation, and just ignore them (for now!)
+### Extending Token Set and Lexer:
+- The new tokens that we will need to add, build and output can be classified as one of these 3 :
+	- one-character token (eg: -)
+	- two-character token (eg: `==`)
+	- keyword token (eg:`return`)
+- 
