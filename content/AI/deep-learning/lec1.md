@@ -1,5 +1,5 @@
 ---
-titl: History of Deep Learning and Progress till 2022
+title: History of Deep Learning and Progress till 2022
 tags:
   - ai
   - deep-learning
