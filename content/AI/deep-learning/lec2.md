@@ -98,4 +98,35 @@ $$
 $$
  W_{i} = W_{i} - \eta(\delta L(W,X)/(\delta W_{i}))
 $$
-- 
+- Gradient based algorithms makes the assumptions that the functions are so much smooth and mostly differentiable - doesn't have to be everywhere differentiable , have to be enough smooth so that local information about the slope should give the information where the minima is.
+- The above image is method for Stochastic Gradient Descent. The process of SGD is:
+	- Show an example
+	- Run it through the machine 
+	- Compute the objective for that particular sample and then
+	- Figure out how much and how to change the knobs to decrease the cost.
+#### Gradient Descent: 
+ - Full (batch) gradient: 
+		- This is actually very slow to compute.
+	 $$
+		w = w - \eta (\delta L(S,w)/\delta w)
+	 $$
+ - Stochastic Gradient (SGD):
+	- SGD exploits the redundancy in the samples:
+		 - Goes faster than full gradient in most cases for speed of convergence.
+		 - In practice, we use mini-batches for parallelization.
+		 - called stochastic as the evaluation of the single start point we get is a noisy estimate of the full gradient. 
+		 - the avg of the full gradient is the averages of each of them.
+		 - Overall the avg trajectory would have the trajectory we would have followed by full gradient.
+		 - SGD exploits the redundancy bw the samples, and the faster you update the parameters the more easily you are able to exploit the redundancy bw these parameters.
+			 $$ 
+			 w = w - \eta (\delta L(x[p],y[p],w)/\delta w)
+		   $$
+-  ![[Screenshot 2025-05-31 at 11.19.45 PM.png]]
+-  At the bottom the slope is zero and points towards the direction of the highest slope. 
+- These gradient based algorithms differ in:
+	- How you compute the gradient ?
+	- By what the $\eta$ size parameter is ?
+		- Step-size parameter , that for simple things is decreased as we start reaching the minima.
+		- For most of them, they are generally a Jaccobian positive definite matrix.
+- In situations where the trajectory is more complicated, this could be entirely different in how we calculate the loss function.
+- (TODO: 20:06)
