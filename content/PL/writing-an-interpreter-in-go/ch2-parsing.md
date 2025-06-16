@@ -149,4 +149,13 @@ let <identifier> = <expression>;
 - By changing `expectPeek` we can automatically add an error every time one of our expectations about the next token was wrong.
 
 ### Parsing Return Statements:
+```ebnf 
+return <expression>;
+```
+- Return stmt consist solely of the keyword return and an expression. That makes the definition of ast.ReturnStatement really simple.
+- Like let stmt parsing, we will skip the parsing of the expression and the semicolon handling for now, but will come back to this later. The `statementNode` and `TokenLiteral` methods are there to fulfill the `Node` and `Statement` interfaces and look identical to the methods defined on `*ast.LetStatement`.
+#### `parseReturnStatement()`
+- Only thing it does is construct a `ast.ReturnStatement` with the current token its sitting on as `Token`. It then finally brings the parser in place for the expressions that comes next by calling `nextToken()` and finally , there's the cop-out./
+- It will skip over every expression until it encounters a semicolon.
+### Parsing Expressions:
 - 
