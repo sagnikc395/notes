@@ -158,4 +158,91 @@ return <expression>;
 - Only thing it does is construct a `ast.ReturnStatement` with the current token its sitting on as `Token`. It then finally brings the parser in place for the expressions that comes next by calling `nextToken()` and finally , there's the cop-out./
 - It will skip over every expression until it encounters a semicolon.
 ### Parsing Expressions:
-- 
+- Main challenges:
+	- Parentheses and evaluation order 
+	- Expressions tokens of the same type can appear in multiple positions. In contrast to this, let token can only appear once at the beginning of a let statement , which makes it easy to determine what the rest of the statement is supposed to be.
+- Outer pair of parentheses in the example denotes a grouped expression. The inner pair denotes a "call expression". The validity of a token's position now depends on the context, the tokens that comes before and after, and their precedence.
+#### Expressions in Vanara:
+- everything besides let and return statements is an expression. These expressions come in different varities.
+	- Expressions involving prefix operators.
+	- Infix operators 
+	- basic arithmatic opertators, comparision operators 
+	- use parentheses to group expressions and influence the order of evaluation.
+	- call expressions 
+	- identifiers are expressions too
+	- functions in vanara are first-class citizens and function literals are expressions too. can use a let stmt to find a functon to a name, function literal is just the expression in the statement.
+	- if expressions 
+#### Pratt Parsing -> Top-down operator Precedence 
+- Published in 1973, recently has been used in a variety of projects.
+- Pratt parsing or Top Down Opeator Precedence Parsing, was invented as an alternative to parsers based on cfg and the backus-naur form.
+- **Instead of associating parsing functions (think like `parseLetStatement` method here) with grammar rules (defined in BNF or EBNF), Pratt associates these functions (calls as 'semantic code') with single token types. A crucial part of this idea is that each token type can have 2 parsing functions associated with it , depending on the token's position - infix or prefix.**
+ - **Prefix Operator**: Operator "in front of" its operand. Eg:
+ ```c 
+ --5
+```
+- Postfix Operator: Operator "after" its operand.Eg:
+```c
+foobar++
+```
+- **Operator Precedence**: Alternative term for this is called as order of operations ie which priority do different operators have.
+
+#### Preparing the AST
+- Program in Vanara is a series of statements. Some are let statements, others are return statements. We need to add a third type of statement to our AST: expression statements.
+- `*ast.ExpressionStatement` type has 2 fields:
+	- the `Token` field, which every node has
+	- `Expression` field , which holds the expression.
+- Adding a String() methods to our AST nodes. This will allow us to print AST nodes for debugging and to compare them with other AST nodes. 
+- `String()` of the AST only creates a buffer and writes the return value of each statements String() method to it. And then it returns the buffer as a string. It delegates most of its work to the Statements of `*ast.Program`. 
+- With these methods in place, we can just call `String()` on `*ast.Program` and get our whole program back as a string.
+- When writing test for the parser we don't of course make predictions for the AST that the parser would produce.
+### Pratt Parser Implementation 
+- Pratt Parser's main idea is the association of parsing functions with token types.
+- Whenever this token type is encountered , the parsing functions are called to parse the appropriate expression and return an AST node that represents it. 
+- Each token type can have up to 2 parsing functions associated with it, depending on whether the token is found in a prefix or an infix position.
+- `prefixParseFns` will get called when we encounter the associated token type in prefix position and `infixParseFn` gets called when we encounter the token type in infix position. 
+- We also add `prefixParseFn` or `infixParseFn` for the current token type, we add 2 maps to the `Parser` structure itself.
+	- With these in place, we can now just check if the appropriate map (infix or prefix) has a parsing function associated with the currToken.Type
+- We add `registerPrefix` and `registerInfix` methods that lets us add entries to these maps.
+
+### Identifiers:
+- Identifiers in Vanara look like this 
+```vanara
+foobar;
+
+add(foobar, barfoo);
+foobar + barfoo;
+if (foobar) {
+	 //[...]
+}
+```
+
+- Here we have identifiers as arguments in a function call, as operands in an infix expression and as a standalone expression as part of a conditional.
+- Like any other expressions , identifiers produce a value: they evaluate to the value they are bound to.
+- Extending first the `parseStatement()` method of the parser, so that it parses expression statements. Since the only two real statement types in Vanara are let and return statements, we try to parser expression statements if we don't encounter one of the other two.
+
+#### TestIdentifier():
+- Mostly grunt work related to checking the parser for errors, making an assertion about the number of statements in the `*ast.Program` node and then checking that the only statement in `program.Statements` is an `*ast.ExpressionStatement`.
+
+#### `parseExpressionStatement()`:
+- We build our AST node and then try to fill its field by calling other parsing functions.
+- we first call `parseExpression()` which doesn't exist yet, with the constant LOWEST  that doesnt exist yet, and then check for an optional semicolon.
+- If `peekToken` is a `token.SEMICOLON`, we advance so it's the `currToken`. If it's not there, that is okay too, we don't add an error to the parser if it's not there.
+- In `parseExpressionStatement()` we pass the lowest possible precedence to `parseExpression` , since we didn't parse anything yet and we can't compare precedences.
+
+#### in parser constructor:
+- we modified the New() to init the prefixParseFns map on Parser and register a parsing function: if we encounter a token of type token.IDENT , the parsing function to call is parseIdentifier, a method we defined on `*Parser`.
+
+#### `parseIdentifer()`:
+- This method doesn't do a lot, and it just returns a `*ast.Identifier` with the current token in the `Token` field and the literal value of the token in Value. It doesn't advance the tokens, it doesn't call `nextToken`.
+
+### Integer Literals:
+- Integer literals are expressions. The value that they produce is the integer itself.
+- Any other expressions instead of integer literals in the expression tree and they would still be valid: identifiers, call expressions, grouped expressions , function literals etc.
+- All the expression types are interchangeable and integer literals are one of them.
+- We create the `IntergerLiteral` struct to store it:
+	- notable difference to `ast.Identifier` in the struct itself : Value is an int64 and not a string.
+	- this is the field that's going to contain the actual value the integer literal represents in the source code.
+	- When we build an `*ast.IntegerLiteral` we have to convert the string in `*ast.IntegerLiteral.Tokn.Literal` from string to int64,
+	- Using a auxillary method to do it:
+		- `parseIntegerLiteral` that will return an `ast.Expression`
+		- 
