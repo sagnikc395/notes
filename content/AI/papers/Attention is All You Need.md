@@ -7,26 +7,27 @@ tags:
 date: 28/12/24
 ---
 ### RNN :
+- A primer to transformers.
 - Networks that was introduced before sequence to sequence jobs.
 - ![[Screenshot 2024-12-28 at 10.26.51 PM.png]]
 - They are allowed to map one sequence of input(X) to another sequence of output(Y). We split the sequence into different states X1,X2,... and pass onto the input RNN to generate Y1,Y2,.. and passed a initial state made up of 0s.
 - The RNN -> RNN connection is called the hidden state of the network , along with next input token and the network had to produce the next output token Y2, ... and we extend it to Xn extending to Yn.
 - If we have N tokens input, then we map for n tokens output.
-- Problems with RNN:
+- **Problems with RNN**:
 	- Slow computations for long sequences. 
 		- Here we have do a for loop for the sequence , longer the sequence , longer the computation.
 	- Vanishing or exploding gradients:![[Screenshot 2024-12-28 at 10.36.42 PM.png]]
 		- PyTorch converts our network into computational graphs.
 		- PyTorch calculates the derivative of the loss function wrt to each weight. 
 		- $$ dg/dx = dg/ df * df/dx $$
-		- using chain rule we calcualte the derivative of each term, imagine if we have 1000 terms. Assume that the first term in this is 0.5 and the second term is also 0.5 , the resultant number will be a number that will be smaller than either of them( as each of them are smaller than 1). If we have a very big chain of computation, then it will either become a very big chain of number, or a very small number.
+		- using chain rule we calculate the derivative of each term, imagine if we have 1000 terms. Assume that the first term in this is 0.5 and the second term is also 0.5 , the resultant number will be a number that will be smaller than either of them( as each of them are smaller than 1). If we have a very big chain of computation, then it will either become a very big chain of number, or a very small number.
 		- and this is not desirable as our CPU/GPU can only repr our number till a certain bit -> and our repr here wont be able to represent, and the weight will move very very slowly -> gradient is vanishing.
 	-  Difficulty in accessing information from long time ago (short context length)
 		- RNN is like a long graph of computation with a new hidden state.
 		- If we have a long computation, then the last token will have a hidden state whose contribution from the first token is nearly gone due to this long chain of multiplication. This will not depend much on the first token.
 
 
-### Transformer :
+### Transformer Architecture :
 - To address the issues of the RNN architecture, the transformer architecture was introduced.
 - ![[transformer-architecture]]
 - The structure of the Transformer we can divide into 2 (major) parts:
