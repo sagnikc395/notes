@@ -59,3 +59,34 @@ let s = "hello"; // s is valid from this point onward
 - In other words, there are 2 important points in time here:
 	- When s comes into scope, it is valid.
 	- It will remain valid until it goes out of scope.
+
+### String type:
+- String type Stored on the heap and explore how Rust knows when to clean up that data.
+- String literals are convinient but they aren't suitable for every situation in which we may want to use text. 
+	- One reasons is that they are immutable.
+	- Not every string value can be known when we write our code: eg: what if we want to take user input and store it ?
+- `String` type useful for these kind of cases. This type manages data allocated on the heap and is such is able to store an amount of text that is unknown to us at compile times.
+```rust
+let s = String::from("hello");
+```
+- Double colon :: operator allows us to namespace this particular form function under the String type rather than using some sort of name like `string_from`.
+- This type of string can be mutated , as:
+```rust 
+let mut s = String::from("hello");
+s.push_str(", world!");
+println!("{s}");
+```
+
+### Memory and Allocation:
+- With the `String` type , in order to support a mutable , growable piece of text, we need to allocate an amount of memory on the heap, unknown at compile time, to hold the contents. This means:
+	- The memory must be requested from the memory allocator at runtime.
+	- We need a way of returning this memory to the allocator when we are done with our `String`.
+- The first part is done by us i.e we call `String::from` , its implementation will request the memory it needs.
+- For the second part it is different.
+	- For languages, with GC (garbage collector), the GC will keep track of and clean up memory that isn't being used anymore, and we don't need to think about it.
+	- In most other programming languages without a GC, it's our responsibility to identify when a memory is no longer being used and to call code to explicitly free it, just as we did to request it. Doing this correctly has historically been a difficult programming problem. If we forget it, we'll waste memory. If we do it too early, we'll have an invalid variable.
+- **Rust takes a different part; memory is automatically returned once the variable that owns it goes out of scope.**
+	- in the scope function example above, there is a natural point at which we can return the memory our `String` needs to the allocator : when `s` goes out of scope.
+	- When a variable goes out of scope, Rust calls a special function for us. This function is called `drop` , and it's where the author of `String` can put the code to return the memory.
+	- Rust calls `drop` automatically at the closing curly bracket.
+- `drop` is similar to how RAII works in C++.
